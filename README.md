@@ -124,6 +124,7 @@ HR-Recruitment-Application/
 
 - Python 3.7+
 - pip
+- MongoDB (Running instance)
 - Virtual environment (recommended)
 
 ### Setup Steps
@@ -155,19 +156,19 @@ HR-Recruitment-Application/
     pip install -r requirements.txt
     ```
 
+5.  **Database Setup:**
+    Ensure your MongoDB instance is running. Configure the connection string in `server/config/settings.py` (or equivalent config file).
+
 ---
 
 ## ⚙ Configuration
 
 Configuration files are located at `server/config/`.
 
-### Configuration Scope
-
 | Area | Description |
 |:---|:---|
-| **Settings** | Environment & app config |
-| **Middleware** | Request/response handling |
-| **CORS** | Cross-origin configuration |
+| **Settings** | MongoDB URI, App ports, Environment config |
+| **Middleware** | Falcon middleware for CORS & Auth |
 | **Logging** | Log levels & formatting |
 | **Errors** | Centralized error handling |
 
@@ -185,7 +186,7 @@ Configuration files are located at `server/config/`.
     ```
     http://localhost:PORT
     ```
-    *(Note: The `PORT` is defined in `settings.py`)*
+    *(Note: The `PORT` is defined in `settings.py`. APIs can be tested via `http://localhost:PORT/api/...`)*
 
 ---
 
@@ -253,17 +254,17 @@ Handled by `sendmail.py`.
 
 ## 🔐 Security & Validation
 
-- Server-side validation
-- Client-side form validation
-- CORS handling via middleware
-- File type & size validation
+- **Input Validation:** Server-side checks using Falcon hooks/validators.
+- **Client Validation:** jQuery/HTML5 form validation.
+- **CORS:** Configured in middleware to allow cross-origin requests (useful for separate frontends).
+- **File Integrity:** Validates file types and sizes during upload.
 
 ---
 
 ## ⚠ Known Limitations
 
 - No role-based access control (RBAC)
-- Local filesystem storage only
+- Local filesystem storage only (Resumes not stored in MongoDB GridFS)
 - No external authentication provider
 - Limited automated test coverage
 
@@ -272,7 +273,7 @@ Handled by `sendmail.py`.
 ## 🔮 Future Enhancements
 
 - [ ] Role-based access control (RBAC)
-- [ ] Cloud storage integration (AWS S3/Azure Blob)
+- [ ] Migrate file storage to MongoDB GridFS or AWS S3
 - [ ] JWT / OAuth authentication
 - [ ] Resume–job matching intelligence
 - [ ] Analytics & reporting dashboard
