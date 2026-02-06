@@ -1,10 +1,11 @@
 # HR Recruitment Application
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
-![Flask](https://img.shields.io/badge/Flask-Web%20Framework-lightgrey)
+![Falcon](https://img.shields.io/badge/Falcon-High%20Performance%20API-lightgrey)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-green)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A full-stack **HR Recruitment Management System** built with Python to manage the complete hiring lifecycle—from job creation to candidate selection—through a modular backend and a server-rendered web interface.
+A full-stack **HR Recruitment Management System** built with **Python** and the **Falcon** framework. It manages the complete hiring lifecycle—from job creation to candidate selection—using a **MongoDB** database and a responsive frontend powered by **jQuery** and **AJAX**.
 
 ---
 
@@ -28,7 +29,9 @@ A full-stack **HR Recruitment Management System** built with Python to manage th
 
 ## 📘 Overview
 
-The **HR Recruitment Application** streamlines recruitment workflows including candidate management, job profiles, resume uploads, interview scheduling, prescreening, feedback, and offer management. It is designed with a clean separation of concerns, making it scalable, maintainable, and extensible.
+The **HR Recruitment Application** streamlines recruitment workflows including candidate management, job profiles, resume uploads, interview scheduling, prescreening, feedback, and offer management. 
+
+It leverages the **Falcon** web framework for high-performance REST APIs and **MongoDB** for flexible, document-based data storage. The frontend uses **AJAX** for seamless, asynchronous data interactions without page reloads.
 
 ---
 
@@ -40,7 +43,7 @@ The **HR Recruitment Application** streamlines recruitment workflows including c
 | **Job Management** | Job profiles, skills, locations |
 | **Recruitment Workflow** | Prescreening, interview scheduling, offers |
 | **Recruiter Tools** | Recruiter & interviewer assignment |
-| **Automation** | Email notifications |
+| **Automation** | Email notifications via SMTP |
 | **Data Management** | Skills, education, city, state, country |
 | **Utilities** | Resume parsing, bulk uploads |
 | **Operations** | Centralized logging & validation |
@@ -49,17 +52,17 @@ The **HR Recruitment Application** streamlines recruitment workflows including c
 
 ## 🧱 Architecture
 
-The application follows a linear data flow architecture:
+The application follows a Service-Oriented Architecture (SOA) style:
 
-> **UI** $\rightarrow$ **API Layer** $\rightarrow$ **Service Layer** $\rightarrow$ **Models** $\rightarrow$ **Storage**
+> **UI (jQuery/AJAX)** $\rightarrow$ **Falcon API** $\rightarrow$ **Service Layer** $\rightarrow$ **MongoDB Models** $\rightarrow$ **Storage**
 
 | Layer | Description |
 |:---|:---|
-| **UI** | HTML templates, CSS, JavaScript |
-| **API** | REST-style endpoints |
+| **UI** | HTML templates, CSS, jQuery, AJAX |
+| **API** | Falcon REST Resources |
 | **Services** | Business logic & workflows |
-| **Models** | Entities & database abstraction |
-| **Storage** | File system uploads & logs |
+| **Models** | PyMongo / MongoDB Abstraction |
+| **Storage** | File system (Resumes) & MongoDB (Data) |
 
 ---
 
@@ -69,23 +72,24 @@ The application follows a linear data flow architecture:
 | Technology | Purpose |
 |:---|:---|
 | **Python 3.x** | Core language |
-| **Flask** | Web framework |
-| **REST APIs** | Communication layer |
+| **Falcon** | High-performance Web API Framework |
+| **MongoDB** | NoSQL Database |
+| **PyMongo** | Database Driver |
 
 ### Frontend
 | Technology | Purpose |
 |:---|:---|
-| **HTML (Jinja)** | Server-side templates |
-| **CSS** | Styling |
-| **JavaScript / jQuery** | Interactivity |
+| **HTML / CSS** | Structure and Styling |
+| **jQuery** | DOM Manipulation |
+| **AJAX** | Asynchronous API calls |
 | **DataTables** | Tabular UI components |
 
-### Utilities
+### Testing & Utilities
 | Utility | Purpose |
 |:---|:---|
-| **Resume Parsing** | Extract candidate data |
+| **Postman** | API Endpoint Testing (CRUD) |
+| **Resume Parser** | Extraction of candidate data |
 | **SMTP** | Email notifications |
-| **Logging** | Audit & debugging |
 
 ---
 
@@ -100,16 +104,16 @@ HR-Recruitment-Application/
 │   └── jobprofiles/
 │
 ├── server/
-│   ├── api/                   # API Routes
-│   ├── config/                # Configuration files
+│   ├── api/                   # Falcon Resources (API Endpoints)
+│   ├── config/                # DB Config, Logging, Settings
 │   ├── extraction/            # Resume parsing logic
-│   ├── models/                # Database entities
+│   ├── models/                # MongoDB Data Models
 │   ├── services/              # Business logic
-│   ├── ui/                    # Frontend templates & static assets
+│   ├── ui/                    # HTML Templates & Static assets
 │   └── __init__.py
 │
 ├── sendmail.py                # Email utility
-├── server.py                  # Application entry point
+├── server.py                  # WSGI Application Entry Point
 ├── requirements.txt           # Dependencies
 └── README.md
 ```
