@@ -112,6 +112,7 @@ HR-Recruitment-Application/
 ├── server.py                  # Application entry point
 ├── requirements.txt           # Dependencies
 └── README.md
+```
 
 ## 🚀 Installation
 
