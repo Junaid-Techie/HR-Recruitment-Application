@@ -1,71 +1,63 @@
-\section{HR Recruitment Application}
+# HR Recruitment Application
 
-\subsection{Overview}
+## Overview
 
-The \textbf{HR Recruitment Application} is a full-stack recruitment management system built with Python.  
+The **HR Recruitment Application** is a full-stack recruitment management system built with Python.  
 It streamlines the complete hiring lifecycle including candidate management, job profiles, resume uploads, interview scheduling, prescreening, feedback, and offer management through a modular backend and a server-rendered web UI.
 
-\hrulefill
+---
 
-\subsection{Features}
+## Features
 
-\begin{itemize}
-  \item Candidate lifecycle management
-  \item Job profile creation and maintenance
-  \item Resume and job description uploads
-  \item Bulk resume upload
-  \item Recruiter and interviewer assignment
-  \item Interview scheduling
-  \item Prescreening workflows
-  \item Feedback and offer management
-  \item Skill, education, and location master data
-  \item Email notifications
-  \item Centralized logging
-\end{itemize}
+- Candidate lifecycle management
+- Job profile creation and maintenance
+- Resume and job description uploads
+- Bulk resume upload
+- Recruiter and interviewer assignment
+- Interview scheduling
+- Prescreening workflows
+- Feedback and offer management
+- Skill, education, and location master data
+- Email notifications
+- Centralized logging
 
-\hrulefill
+---
 
-\subsection{Architecture}
+## Architecture
 
 \[
 \text{UI} \rightarrow \text{API Layer} \rightarrow \text{Service Layer} \rightarrow \text{Models} \rightarrow \text{Storage}
 \]
 
-\hrulefill
+---
 
-\subsection{Technology Stack}
+## Technology Stack
 
-\subsubsection{Backend}
+### Backend
 
-\begin{itemize}
-  \item Python 3.x
-  \item Flask (or Flask-compatible framework)
-  \item REST-style APIs
-\end{itemize}
+- Python 3.x
+- Flask (or Flask-compatible framework)
+- REST-style APIs
 
-\subsubsection{Frontend}
+### Frontend
 
-\begin{itemize}
-  \item HTML (Jinja templates)
-  \item CSS
-  \item JavaScript
-  \item jQuery
-  \item DataTables
-\end{itemize}
+- HTML (Jinja templates)
+- CSS
+- JavaScript
+- jQuery
+- DataTables
 
-\subsubsection{Utilities}
+### Utilities
 
-\begin{itemize}
-  \item Resume parsing and extraction
-  \item SMTP-based email service
-  \item Application logging
-\end{itemize}
+- Resume parsing and extraction
+- SMTP-based email service
+- Application logging
 
-\hrulefill
+---
 
-\subsection{Directory Structure}
+## Directory Structure
 
-\begin{verbatim}
+```text
 HR-Recruitment-Application/
 ├── logs/
 ├── uploaded_files/
@@ -145,227 +137,184 @@ HR-Recruitment-Application/
 │   │   └── vendor assets
 │   │
 │   └── __init__.py
-\end{verbatim}
 
 
+## Installation
 
-\section{Installation}
+### Prerequisites
 
-\subsection{Prerequisites}
+- Python 3.7 or higher
 
-\[
-\text{Python} \ge 3.7
-\]
+### Clone Repository
 
-\subsection{Clone Repository}
+    git clone <repository-url>
+    cd HR-Recruitment-Application
 
-\begin{verbatim}
-git clone <repository-url>
-cd HR-Recruitment-Application
-\end{verbatim}
+### Create Virtual Environment
 
-\subsection{Create Virtual Environment}
+    python -m venv venv
 
-\begin{verbatim}
-python -m venv venv
-\end{verbatim}
+### Activate Virtual Environment
 
-\subsection{Activate Virtual Environment}
+Linux / macOS:
 
-\textbf{Linux / macOS}
-\begin{verbatim}
-source venv/bin/activate
-\end{verbatim}
+    source venv/bin/activate
 
-\textbf{Windows}
-\begin{verbatim}
-venv\Scripts\activate
-\end{verbatim}
+Windows:
 
-\subsection{Install Dependencies}
+    venv\Scripts\activate
 
-\begin{verbatim}
-pip install -r requirements.txt
-\end{verbatim}
+### Install Dependencies
+
+    pip install -r requirements.txt
 
 ---
 
-\section{Configuration}
+## Configuration
 
 Configuration files are located at:
 
-\begin{verbatim}
-server/config/
-\end{verbatim}
+    server/config/
 
-\subsection{Key Configuration Areas}
+### Key Configuration Areas
 
-\begin{itemize}
-  \item Application settings
-  \item Middleware and hooks
-  \item CORS handling
-  \item Logging configuration
-  \item Error handling
-\end{itemize}
+- Application settings  
+- Middleware and hooks  
+- CORS handling  
+- Logging configuration  
+- Error handling  
 
 ---
 
-\section{Running the Application}
+## Running the Application
 
-\begin{verbatim}
-python server.py
-\end{verbatim}
+    python server.py
 
-\[
-\text{Application URL: http://localhost:PORT}
-\]
+Application URL:
 
-The port is defined in \texttt{settings.py}.
+    http://localhost:PORT
+
+The port is defined in `settings.py`.
 
 ---
 
-\section{API Modules}
+## API Modules
 
-\subsection{Candidate and Applications}
-\begin{itemize}
-  \item \texttt{candidate.py}
-  \item \texttt{applications.py}
-\end{itemize}
+### Candidate and Applications
 
-\subsection{Job and Hiring Workflow}
-\begin{itemize}
-  \item \texttt{jobs.py}
-  \item \texttt{prescreening.py}
-  \item \texttt{scheduler.py}
-  \item \texttt{offers.py}
-  \item \texttt{feedback.py}
-\end{itemize}
+- candidate.py  
+- applications.py  
 
-\subsection{Recruiter Management}
-\begin{itemize}
-  \item \texttt{recruiter.py}
-\end{itemize}
+### Job and Hiring Workflow
 
-\subsection{Master Data}
-\begin{itemize}
-  \item \texttt{skills.py}
-  \item \texttt{educations.py}
-  \item \texttt{city.py}
-  \item \texttt{state.py}
-  \item \texttt{country.py}
-  \item \texttt{functionalorg.py}
-\end{itemize}
+- jobs.py  
+- prescreening.py  
+- scheduler.py  
+- offers.py  
+- feedback.py  
+
+### Recruiter Management
+
+- recruiter.py  
+
+### Master Data
+
+- skills.py  
+- educations.py  
+- city.py  
+- state.py  
+- country.py  
+- functionalorg.py  
 
 ---
 
-\section{UI Layer}
+## UI Layer
 
 UI templates and static assets are located at:
 
-\begin{verbatim}
-server/ui/
-\end{verbatim}
+    server/ui/
 
-\subsection{Includes}
+### Includes
 
-\begin{itemize}
-  \item Candidate management screens
-  \item Job profile management
-  \item Recruiter dashboards
-  \item Interview scheduling
-  \item Prescreening and feedback
-  \item Offer management
-  \item Resume upload and bulk upload
-\end{itemize}
+- Candidate management screens  
+- Job profile management  
+- Recruiter dashboards  
+- Interview scheduling  
+- Prescreening and feedback  
+- Offer management  
+- Resume upload and bulk upload  
 
 ---
 
-\section{File Uploads}
+## File Uploads
 
 Uploaded files are stored locally at:
 
-\begin{verbatim}
-uploaded_files/
-├── candidateprofiles/
-├── jd/
-└── jobprofiles/
-\end{verbatim}
+    uploaded_files/
+    ├── candidateprofiles/
+    ├── jd/
+    └── jobprofiles/
 
 Files are stored using UUID-based naming to avoid collisions.
 
 ---
 
-\section{Logging}
+## Logging
 
 Application logs are written to:
 
-\begin{verbatim}
-logs/
-\end{verbatim}
+    logs/
 
 Logging configuration is defined in:
 
-\begin{verbatim}
-server/config/applogging.py
-\end{verbatim}
+    server/config/applogging.py
 
 ---
 
-\section{Email Service}
+## Email Service
 
 Email notifications are handled using:
 
-\begin{verbatim}
-sendmail.py
-\end{verbatim}
+    sendmail.py
 
-\subsection{Used For}
+### Used For
 
-\begin{itemize}
-  \item Interview notifications
-  \item Candidate communication
-  \item Offer letters
-\end{itemize}
+- Interview notifications  
+- Candidate communication  
+- Offer letters  
 
 ---
 
-\section{Security and Validation}
+## Security and Validation
 
-\begin{itemize}
-  \item Server-side validation
-  \item Client-side form validation
-  \item CORS handling via middleware
-  \item File type and size validation
-\end{itemize}
+- Server-side validation  
+- Client-side form validation  
+- CORS handling via middleware  
+- File type and size validation  
 
 ---
 
-\section{Known Limitations}
+## Known Limitations
 
-\begin{itemize}
-  \item No role-based access control (RBAC)
-  \item Local filesystem storage only
-  \item No external authentication provider
-  \item Limited automated test coverage
-\end{itemize}
+- No role-based access control (RBAC)  
+- Local filesystem storage only  
+- No external authentication provider  
+- Limited automated test coverage  
 
 ---
 
-\section{Future Enhancements}
+## Future Enhancements
 
-\begin{itemize}
-  \item Role-based access control
-  \item Cloud storage integration
-  \item JWT / OAuth authentication
-  \item Resume--job matching intelligence
-  \item Analytics and reporting
-  \item Dockerized deployment
-\end{itemize}
+- Role-based access control  
+- Cloud storage integration  
+- JWT / OAuth authentication  
+- Resume–job matching intelligence  
+- Analytics and reporting  
+- Dockerized deployment  
 
 ---
 
-\section{License}
+## License
 
 This project is intended for internal or educational use.  
-Add a \texttt{LICENSE} file for public distribution.
-
+Add a LICENSE file for public distribution.
