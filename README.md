@@ -1,61 +1,74 @@
 # HR Recruitment Application
 
-## Overview
-
-The **HR Recruitment Application** is a full-stack recruitment management system built with Python.  
-It streamlines the complete hiring lifecycle including candidate management, job profiles, resume uploads, interview scheduling, prescreening, feedback, and offer management through a modular backend and a server-rendered web UI.
+A full-stack **HR Recruitment Management System** built with Python to manage the complete hiring lifecycle—from job creation to candidate selection—through a modular backend and a server-rendered web interface.
 
 ---
 
-## Features
+## 📘 Overview
 
-- Candidate lifecycle management
-- Job profile creation and maintenance
-- Resume and job description uploads
-- Bulk resume upload
-- Recruiter and interviewer assignment
-- Interview scheduling
-- Prescreening workflows
-- Feedback and offer management
-- Skill, education, and location master data
-- Email notifications
-- Centralized logging
+The **HR Recruitment Application** streamlines recruitment workflows including candidate management, job profiles, resume uploads, interview scheduling, prescreening, feedback, and offer management.  
+It is designed with a clean separation of concerns, making it scalable, maintainable, and extensible.
 
 ---
 
-## Architecture
+## ✨ Key Features
+
+| Category | Capabilities |
+|-------|-------------|
+| Candidate Management | Candidate profiles, applications, resumes |
+| Job Management | Job profiles, skills, locations |
+| Recruitment Workflow | Prescreening, interview scheduling, offers |
+| Recruiter Tools | Recruiter & interviewer assignment |
+| Automation | Email notifications |
+| Data Management | Skills, education, city, state, country |
+| Utilities | Resume parsing, bulk uploads |
+| Operations | Centralized logging & validation |
+
+---
+
+## 🧱 Architecture
 
 \[
 \text{UI} \rightarrow \text{API Layer} \rightarrow \text{Service Layer} \rightarrow \text{Models} \rightarrow \text{Storage}
 \]
 
+| Layer | Description |
+|-----|------------|
+| UI | HTML templates, CSS, JavaScript |
+| API | REST-style endpoints |
+| Services | Business logic & workflows |
+| Models | Entities & database abstraction |
+| Storage | File system uploads & logs |
+
 ---
 
-## Technology Stack
+## 🛠 Technology Stack
 
 ### Backend
-
-- Python 3.x
-- Flask (or Flask-compatible framework)
-- REST-style APIs
+| Technology | Purpose |
+|----------|--------|
+| Python 3.x | Core language |
+| Flask | Web framework |
+| REST APIs | Communication layer |
 
 ### Frontend
-
-- HTML (Jinja templates)
-- CSS
-- JavaScript
-- jQuery
-- DataTables
+| Technology | Purpose |
+|----------|--------|
+| HTML (Jinja) | Server-side templates |
+| CSS | Styling |
+| JavaScript / jQuery | Interactivity |
+| DataTables | Tabular UI components |
 
 ### Utilities
-
-- Resume parsing and extraction
-- SMTP-based email service
-- Application logging
+| Utility | Purpose |
+|--------|--------|
+| Resume Parsing | Extract candidate data |
+| SMTP | Email notifications |
+| Logging | Audit & debugging |
 
 ---
 
-## Directory Structure
+## 📁 Directory Structure
 
 ```text
 HR-Recruitment-Application/
@@ -72,86 +85,27 @@ HR-Recruitment-Application/
 │
 ├── server/
 │   ├── api/
-│   │   ├── applications.py
-│   │   ├── candidate.py
-│   │   ├── city.py
-│   │   ├── country.py
-│   │   ├── educations.py
-│   │   ├── feedback.py
-│   │   ├── functionalorg.py
-│   │   ├── jobs.py
-│   │   ├── offers.py
-│   │   ├── prescreening.py
-│   │   ├── recruiter.py
-│   │   ├── scheduler.py
-│   │   ├── skills.py
-│   │   ├── state.py
-│   │   └── __init__.py
-│   │
 │   ├── config/
-│   │   ├── applogging.py
-│   │   ├── badrequests.py
-│   │   ├── config.py
-│   │   ├── handlecors.py
-│   │   ├── hooks.py
-│   │   ├── middleware.py
-│   │   ├── settings.py
-│   │   └── __init__.py
-│   │
 │   ├── extraction/
-│   │   ├── extract.py
-│   │   ├── helpers.py
-│   │   └── __init__.py
-│   │
 │   ├── models/
-│   │   ├── entities.py
-│   │   ├── models.py
-│   │   └── __init__.py
-│   │
 │   ├── services/
-│   │   ├── application.py
-│   │   ├── candidate.py
-│   │   ├── city.py
-│   │   ├── country.py
-│   │   ├── education.py
-│   │   ├── email.py
-│   │   ├── feedback.py
-│   │   ├── functionalorg.py
-│   │   ├── job.py
-│   │   ├── offer.py
-│   │   ├── prescreening.py
-│   │   ├── recruiter.py
-│   │   ├── resume.py
-│   │   ├── scheduler.py
-│   │   ├── search.py
-│   │   ├── servepages.py
-│   │   ├── server_validation.py
-│   │   ├── skill.py
-│   │   ├── state.py
-│   │   └── __init__.py
-│   │
 │   ├── ui/
-│   │   ├── *.html
-│   │   ├── css/
-│   │   ├── js/
-│   │   └── vendor assets
-│   │
 │   └── __init__.py
 
-
-## Installation
+## 🚀 Installation
 
 ### Prerequisites
 
-- Python 3.7 or higher
+- Python 3.7+
+- pip
+- Virtual environment (recommended)
 
-### Clone Repository
+### Setup Steps
+
+Command Line (Shell):
 
     git clone <repository-url>
     cd HR-Recruitment-Application
-
-### Create Virtual Environment
-
     python -m venv venv
 
 ### Activate Virtual Environment
@@ -170,23 +124,27 @@ Windows:
 
 ---
 
-## Configuration
+## ⚙ Configuration
 
 Configuration files are located at:
 
     server/config/
 
-### Key Configuration Areas
+### Configuration Scope
 
-- Application settings  
-- Middleware and hooks  
-- CORS handling  
-- Logging configuration  
-- Error handling  
+| Area       | Description                      |
+|------------|----------------------------------|
+| Settings   | Environment & app config         |
+| Middleware | Request/response handling        |
+| CORS       | Cross-origin configuration       |
+| Logging    | Log levels & formatting          |
+| Errors     | Centralized error handling       |
 
 ---
 
-## Running the Application
+## ▶ Running the Application
+
+Command Line (Shell):
 
     python server.py
 
@@ -194,61 +152,56 @@ Application URL:
 
     http://localhost:PORT
 
-The port is defined in `settings.py`.
+Note: The port is defined in `settings.py`.
 
 ---
 
-## API Modules
+## 🔌 API Modules
 
-### Candidate and Applications
+### Core Domains
 
-- candidate.py  
-- applications.py  
-
-### Job and Hiring Workflow
-
-- jobs.py  
-- prescreening.py  
-- scheduler.py  
-- offers.py  
-- feedback.py  
-
-### Recruiter Management
-
-- recruiter.py  
+| Module            | Responsibility            |
+|-------------------|---------------------------|
+| candidate.py      | Candidate management      |
+| applications.py   | Job applications          |
+| jobs.py           | Job profiles              |
+| prescreening.py   | Prescreen workflows       |
+| scheduler.py      | Interview scheduling     |
+| offers.py         | Offer management          |
+| feedback.py       | Interview feedback        |
 
 ### Master Data
 
-- skills.py  
-- educations.py  
-- city.py  
-- state.py  
-- country.py  
-- functionalorg.py  
+- skills.py
+- educations.py
+- city.py
+- state.py
+- country.py
+- functionalorg.py
 
 ---
 
-## UI Layer
+## 🖥 UI Layer
 
 UI templates and static assets are located at:
 
     server/ui/
 
-### Includes
+### Screens Include
 
-- Candidate management screens  
-- Job profile management  
-- Recruiter dashboards  
-- Interview scheduling  
-- Prescreening and feedback  
-- Offer management  
-- Resume upload and bulk upload  
+- Candidate management
+- Job profiles
+- Recruiter dashboards
+- Interview scheduling
+- Prescreening & feedback
+- Offer management
+- Resume & bulk uploads
 
 ---
 
-## File Uploads
+## 📂 File Uploads
 
-Uploaded files are stored locally at:
+Uploaded files are stored locally:
 
     uploaded_files/
     ├── candidateprofiles/
@@ -259,62 +212,75 @@ Files are stored using UUID-based naming to avoid collisions.
 
 ---
 
-## Logging
+## 📝 Logging
 
-Application logs are written to:
+Logs are written to:
 
     logs/
 
-Logging configuration is defined in:
+Configured via:
 
     server/config/applogging.py
 
 ---
 
-## Email Service
+## ✉ Email Service
 
-Email notifications are handled using:
+Handled by:
 
     sendmail.py
 
 ### Used For
 
-- Interview notifications  
-- Candidate communication  
-- Offer letters  
+- Interview notifications
+- Candidate communication
+- Offer letters
 
 ---
 
-## Security and Validation
+## 🔐 Security & Validation
 
-- Server-side validation  
-- Client-side form validation  
-- CORS handling via middleware  
-- File type and size validation  
-
----
-
-## Known Limitations
-
-- No role-based access control (RBAC)  
-- Local filesystem storage only  
-- No external authentication provider  
-- Limited automated test coverage  
+- Server-side validation
+- Client-side form validation
+- CORS handling via middleware
+- File type & size validation
 
 ---
 
-## Future Enhancements
+## ⚠ Known Limitations
 
-- Role-based access control  
-- Cloud storage integration  
-- JWT / OAuth authentication  
-- Resume–job matching intelligence  
-- Analytics and reporting  
-- Dockerized deployment  
+- No role-based access control (RBAC)
+- Local filesystem storage only
+- No external authentication provider
+- Limited automated test coverage
 
 ---
 
-## License
+## 🔮 Future Enhancements
 
-This project is intended for internal or educational use.  
-Add a LICENSE file for public distribution.
+- Role-based access control
+- Cloud storage integration
+- JWT / OAuth authentication
+- Resume–job matching intelligence
+- Analytics & reporting dashboard
+- Dockerized deployment
+
+---
+
+## 📜 License
+
+MIT License
+
+Copyright © 2026 Junaid-Techie
+
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the “Software”), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND.
+
+---
+
+💡 Maintained by **Junaid-Techie**
