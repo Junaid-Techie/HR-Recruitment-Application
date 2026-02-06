@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Post New Functional Org Records </h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4>Functional Org Records</h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Functional Org Records</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 380px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 380px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-5 col-centered">
+                        <div class="sameheight-item">
+                            <form role="form" id='target'>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="formGroupExampleInput">Functional Org Name</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Org Name" name='org_name' value="{{orgname}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="formGroupExampleInput">Org Email</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter Org Email" name='orgemail' value="{{orgemail}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="formGroupExampleInput2">CC Email</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Enter CC Email" name='ccemail' value="{{ccemail}}">
+                                </fieldset> <input type="hidden" name="txn" value="{{orgname}}">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <fieldset class="form-group mt-4">
+                            <button type="button" id='updsubmit' class="btn btn-info col-md-1">Update</button>
+                            <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                            <a class="btn btn-info col-md-1" style="text-decoration: none;color:black;"
+                                href="{{apptitle}}{{orgprofile_url}}">Cancel</a>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

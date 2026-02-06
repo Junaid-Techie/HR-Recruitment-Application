@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Request for Re-Schedule </h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4>Request of Interview Re-Schedule</h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Request for Reschedule</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 430px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 430px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <form role="form" id='target'>
+
+                    <div class="row justify-content-md-center">
+
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="job">Job</label>
+                                    <select class="form-control" name='job' id='job'>
+                                        <option value="{{jobcode}}">{{ jobcode }}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="candidate">Candidate
+                                        Name</label>
+                                    <select class="form-control" name='candidate' id='candidate'>
+                                        <option value="{{candidate_email}}">{{candidate_name}}</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_name">Interviewer
+                                        Name</label>
+                                    <select class="form-control" name='interviewer_name' id='interviewer_name'>
+                                        <option value="{{interviewer_name}}">
+                                            {{interviewer_name}}</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_email">Interviewer
+                                        Email</label>
+                                    <select class="form-control" name='interviewer_email' id='interviewer_email'>
+                                        <option value="{{interviewer_email}}">
+                                            {{interviewer_email}}</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interview_type">Interview Type
+                                        Number</label>
+                                    <select class="form-control" name='interview_type' id='interview_type'>
+                                        {{round}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="scheduled_datetime">Proposed Re-Schedule Date &
+                                        Time</label>
+                                    <input type="datetime-local" class="form-control" id="scheduled_datetime"
+                                        name="scheduled_datetime" value="{{scheduled_datetime}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_acknowledge_comments">
+                                        Comments</label>
+                                    <textarea rows="3" class="form-control" id="interviewer_acknowledge_comments"
+                                        placeholder="Comments" name='interviewer_acknowledge_comments'></textarea>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <fieldset class="form-group mt-4">
+                                <button type="button" id='updsubmit' class="btn btn-info col-md-1">Update
+                                </button><input type="hidden" name="txn" value="{{reference}}">
+                                <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                                <a class="btn btn-info col-md-1" style="text-decoration: none;color:black"
+                                    href="{{apptitle}}{{interviewer_acceptance_url}}">Cancel</a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

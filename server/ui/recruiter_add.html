@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title">Recruiter Profile</h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4> Add Recruiter </h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Add Recruiter</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 80px 360px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 80px 360px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <form role="form" id='target'>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="emp_id">Employee ID
+                                    </label>
+                                    <input type="text" class="form-control" id="emp_id"
+                                        placeholder="Enter your Employee ID" name="emp_id">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="first_name">First Name
+                                    </label>
+                                    <input type="text" class="form-control" id="first_name" name="first_name"
+                                        placeholder="Enter your First Name">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="middle_name">Middle Name
+                                    </label>
+                                    <input type="text" class="form-control" id="middle_name" name="middle_name"
+                                        placeholder="Enter Middle Name">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="last_name">Last Name
+                                    </label>
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="start_time">Shift Start Time
+                                    </label>
+                                    <input type="time" class="form-control" id="start_time" name="start_time">
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="phone">Phone</label>
+                                    <input type="text" class="form-control" id="phone"
+                                        placeholder="Enter your contact number" name="phone" required>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="email">Email</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Example: google@nisum.com" name="email" autocomplete="off"
+                                        pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                        required>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="designation">Designation</label>
+                                    <input type="text" class="form-control" id="designation"
+                                        placeholder="Example: Tech Lead" name=designation>
+
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="location">Working Location
+                                    </label>
+                                    <select class="form-control" id="location" name="location">
+                                        <option value="">---Select---</option>
+                                        {{work_location}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="functional_org">Functional Orgs</label>
+
+                                    <select class="form-control" id="functional_org"
+                                        placeholder="Select Functional Orgs" name="functional_org" multiple required>
+                                        {{functional_org}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="end_time">Shift End Time
+                                    </label>
+                                    <input type="time" class="form-control" id="end_time" name="end_time">
+                                </fieldset>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <fieldset class="form-group mt-4">
+                            <button type="button" id='submit' class="btn btn-info col-md-1">Add</button>
+                            <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                            <a class="btn btn-info col-md-1" style="text-decoration: none;color:black;"
+                                href="{{apptitle}}{{recruiter_url}}">Cancel</a>
+                        </fieldset>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

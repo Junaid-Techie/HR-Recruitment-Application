@@ -1,0 +1,115 @@
+body {
+  margin: 20px 0;
+  font-family: 'sanserif';
+  font-weight: 300;
+  font-size: 1rem;
+  width: 300px;
+}
+
+form, p {
+  margin: 20px;
+}
+
+p.note {
+  font-size: 1rem;
+  color: red;
+}
+
+.btn {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-info {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input, textarea {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 2px;
+  font-family: 'sanserif';
+  width: 200px;
+  margin-top: 5px;
+}
+
+label {
+  width: 300px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+label span {
+  font-size: 1rem;
+}
+
+label.error {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}
+input.error, textarea.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+
+[type="submit"], [type="reset"], button, html [type="button"] {
+    margin-left: 0;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    border: none;
+    font-weight: 300;
+    padding: 10px 0;
+    line-height: 1;
+}
+
+#loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}

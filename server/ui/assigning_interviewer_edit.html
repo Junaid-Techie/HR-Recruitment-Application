@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Reassigning Interviewer </h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4>Update Information</h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Update Information</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 80px 380px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 80px 380px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <form role="form" id='target' method='post'>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="job">Job</label>
+                                    <select class="form-control" name='job' id='job'>
+                                        <option value="{{jobcode}}">{{ jobcode }}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="candidate">Candidate
+                                        Name</label>
+                                    <select class="form-control" name='candidate' id='candidate'>
+                                        <option value="{{candidate_email}}">{{candidate_name}}</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_name">Interviewer
+                                        Name</label>
+                                    <input type="text" class="form-control" id="interviewer_name" placeholder="Enter "
+                                        name="interviewer_name" value="{{interviewer_name}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_email">Email</label>
+                                    <input type="text" class="form-control" id="interviewer_email"
+                                        placeholder="Enter Email" name="interviewer_email"
+                                        value="{{interviewer_email}}">
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interviewer_phone">Phone</label>
+                                    <input type="text" class="form-control" id="interviewer_phone"
+                                        placeholder="Enter contact number" name="interviewer_phone"
+                                        value="{{interviewer_phone}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="scheduled_datetime">Schedule
+                                        Date&Time</label>
+                                    <input type="datetime-local" class="form-control" id="scheduled_datetime"
+                                        name="scheduled_datetime" value="{{scheduled_datetime}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="round_number">Round
+                                        Number</label>
+                                    <select class="form-control" name='round_number' id='round_number'>
+                                        {{round}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interview_type">Interview Type
+                                    </label>
+                                    <select class="form-control" name='interview_type' id='interview_type'>
+                                        {{interview}}
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <fieldset class="form-group mt-4">
+                                <button type="button" id='updsubmit' class="btn btn-info col-md-1">Reassign
+                                </button>
+                                <input type="hidden" name="txn" value="{{reference}}">
+                                <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                                <a class="btn btn-info col-md-1" style="text-decoration: none;color:black"
+                                    href="{{apptitle}}{{schedule_url}}">Cancel</a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

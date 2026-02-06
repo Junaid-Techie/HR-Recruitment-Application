@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title">Post New Functional Org Group</h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4>Create Functional Org</h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Create Functional Org</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 380px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 380px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-5 col-centered">
+                        <div class="sameheight-item">
+                            <form role="form" id='target'>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="org_name">Functional Org Name</label>
+                                    <input type="text" class="form-control" id="org_name"
+                                        placeholder="Enter Functional Org Name" name='org_name'>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="orgemail">Org Email</label>
+                                    <input type="email" class="form-control" id="orgemail"
+                                        placeholder="Enter Functional Org Email" name='orgemail'>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="ccemail">CC Email</label>
+                                    <input type="email" class="form-control" id="ccemail" placeholder="Enter CC Email"
+                                        name='ccemail'>
+                                </fieldset>
+                                <fieldset class="form-group mt-4">
+                                    <button type="button" id='submit' class="btn btn-info col-md-2">Add</button>
+                                    <button type="reset" class="btn btn-info col-md-2">Clear</button>
+                                    <a class="btn btn-info col-md-2" style="text-decoration: none;color:black;"
+                                        href="{{apptitle}}{{orgprofile_url}}">Cancel</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

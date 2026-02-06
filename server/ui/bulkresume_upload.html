@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Bulk Upload</h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <div class="title-block">
+                    <h4>Bulk Resumes Upload</h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 100px 250px;width:100%;color:green'
+                            id='message'></span></b>
+                    <!-- <div id="loading"></div> -->
+                </div>
+                <form method="POST" enctype="multipart/form-data" id="target" role="form">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <div class="col-md-12 col-centered">
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="code">Job Code</label>
+                                        <select class="form-control" id="code" name='code'>
+                                            <option value="">---Select---</option>
+                                            {% for obj in jobcodes %}
+                                            <option value="{{ obj.code }}">{{ obj.code }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="resume">Upload Resume('s)</label>
+                                        <input type="file" name="resumes[]" class="form-control" id="resume"
+                                            placeholder="Upload Resume" multiple="multiple">
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <fieldset class="form-group mt-4">
+                                    <button type="button" id='submit' class="btn btn-info col-md-3">Upload
+                                    </button>
+                                    <button type="reset" class="btn btn-info col-md-3">Clear</button>
+                                    <a class="btn btn-info col-md-3" style="text-decoration: none;color:black"
+                                        href="{{apptitle}}{{resumeupload_url}}">Cancel</a>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

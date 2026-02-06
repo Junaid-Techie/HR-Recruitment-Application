@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content responsive-tables-page">
+
+    <div class="title-block">
+        <h1 class="title"> FeedBack </h1>
+    </div>
+    <form role="form" id='target'>
+        <section class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title-block">
+                                <h3 class="title"> FeedBack List</h3>
+                            </div>
+                            <div class="header-block">
+                                <a href="{{apptitle}}addfeedback" class="btn btn-info btn-sm" id='addbtn'>
+                                    Add FeedBack</a>
+                            </div>
+                            <section class="example">
+                                <div class="table-responsive">
+                                    <table id="data"
+                                        class="table table-striped table-bordered table-hover flip-content">
+                                        <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                                                id='message'></span></b>
+                                        <div id="loading"></div>
+
+                                        <thead class="flip-header">
+                                            <tr>
+                                                <th>Job COde</th>
+                                                <th>Candidate</th>
+                                                <th>Interview Feedback</th>
+                                                <th>Feedback Date</th>
+                                                <th>Round Name</th>
+                                                <th>Next Round</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <input type="hidden" name='comment' id='comment' value=''>
+        <input type="hidden" name='txn' id='txn' value=''>
+        <input type="hidden" name='status' id='status' value=''>
+
+    </form>
+</article>
+{% endblock %}

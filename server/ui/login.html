@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Login </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{appurl}}{{static_url}}css/vendor.css">
+        <link rel="stylesheet" id="theme-style" href="{{appurl}}{{static_url}}css/app.css">
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="app header-fixed sidebar-fixed" id="app">
+                <header class="header">
+                    <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                        <button class="collapse-btn" id="sidebar-collapse-btn">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="header-block header-block-search col-md-5">
+                        <form role="search" action="{{appurl}}home">
+                            <div class="input-container">
+                                <i class="fa fa-search"></i>
+                                <input type="search" placeholder="Search" class="form-control">
+                                <div class="underline"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header-block header-block-nav">
+                        <ul class="nav-profile">
+                            <li class="profile dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="fa fa fa-user-circle-o fa-1x">
+                                    </div>
+                                    <span class="name"> User Name</span>
+                                </a>
+                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-user icon"></i> My Profile </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-bell icon"></i> Notifications </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-power-off icon"></i> Logout </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <aside class="sidebar">
+                    <div class="sidebar-container">
+                        <div class="sidebar-header">
+                            <div class="brand">
+                                <i class="fa fa-h-square fa-1x mr-1"></i>
+                                <b>HR Recruiter</b>
+                            </div>
+                        </div>
+                        <nav class="menu">
+                            <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                                <li>
+                                    <a href="index.html">
+                                        <i class="fa fa-home"></i>Home </a>
+                                </li>
+                                <li>
+                                    <a href="forms.html">
+                                    <i class="fa fa-pencil-square-o"></i>Post New Requirement </a>
+                                </li>
+                                <li>
+                                    <a href="list.html">
+                                    <i class="fa fa fa-list"></i>Requirement List </a>
+                                </li>
+                                <li class="active">
+                                    <a href="login.html">
+                                    <i class="fa fa-lock" aria-hidden="true"></i> Sign In </a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#">
+                                        <i class="fa fa-area-chart"></i> Charts <i class="fa arrow"></i>
+                                    </a>
+                                    <ul class="sidebar-nav collapse">
+                                        <li>
+                                            <a href="#"> Flot Charts </a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </aside>
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+                <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+                <div class="mobile-menu-handle"></div>
+                <article class="content responsive-tables-page">
+                    <div class="title-block">
+                        <h1 class="title"> Sign In</h1>
+                    </div>
+                    <section class="section">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6 mt-5">
+                                <div class="card card-block">
+                                    <div class="subtitle-block text-center">
+                                        <h3 class="subtitle"> <b>Account LogIn</b> </h3>
+                                    </div>
+                                    <form action="{{apptitle}}home" method="get">
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-3 form-control-label">Email</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword3" class="col-sm-3 form-control-label">Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword3" class="col-sm-3 form-control-label">&nbsp;</label>
+                                            <div class="col-sm-9">
+                                                <button type="submit" class="btn btn-success col-md-5">Sign in</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+                </article>
+                <footer class="footer">
+                    <div class="footer-block author">
+                        <ul>
+                            <li>Copyright © 2019 Nisum Consulting Pvt Ltd. All rights reserved </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="{{appurl}}{{static_url}}js/vendor.js"></script>
+        <script src="{{appurl}}{{static_url}}js/app.js"></script>
+    </body>
+</html>

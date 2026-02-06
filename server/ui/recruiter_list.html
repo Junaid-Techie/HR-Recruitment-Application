@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content responsive-tables-page">
+    <div class="title-block">
+        <h1 class="title"> Recruiter </h1>
+    </div>
+    <form id='target'>
+        <section class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title-block">
+                                <h3 class="title"> Recruiters List </h3>
+                            </div>
+                            <section class="example">
+                                <div class="header-block">
+                                    <a href="{{appurl}}addrecruiter" class="btn btn-info btn-sm">Add</a>
+                                    <a href="#" class="btn btn-info btn-sm disabled" id='updatebtn'>Edit</a>
+                                    <a href="#" type="button" id="update_status" class="btn btn-info btn-sm disabled">
+                                        Make Enable/Disable </a>
+                                </div>
+                                <div class="table-responsive">
+                                    <div>
+                                        <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                                                id='message'></span></b>
+                                        <div id="loading"></div>
+                                    </div>
+                                    <table id="data" class="table table-striped table-bordered table-hover flip-content"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr class="selected">
+                                                <th>Emp Id</th>
+                                                <th>Recruiter Name</th>
+                                                <th>Phone</th>
+                                                <th>Email</th>
+                                                <th>Location</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name='txn' id='txn' value=''>
+        </section>
+    </form>
+</article>
+{% endblock %}

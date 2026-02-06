@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Upload Resume</h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <!-- <div class="title-block">
+                    <h4>Upload Resume </h4>
+                    <hr />
+                    <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                            id='message'></span></b>
+                    <div id="loading"></div>
+                </div> -->
+                <div>
+                    <h4>Upload Resume</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding:  80px 380px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding:  80px 380px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <form method="POST" enctype="multipart/form-data" id="target" role="form">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <div class="col-md-12 col-centered">
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="code">Job Code</label>
+                                        <select class="form-control" id="code" name='code'>
+                                            <option value="">---Select---</option>
+                                            {% for obj in jobcodes %}
+                                            <option value="{{ obj.code }}">{{ obj.code }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="first_name">First Name
+                                        </label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name"
+                                            placeholder="Enter First Name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="middle_name">Middle Name
+                                        </label>
+                                        <input type="text" class="form-control" id="middle_name" name="middle_name"
+                                            placeholder="Enter Middle Name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="last_name">Last Name
+                                        </label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name"
+                                            placeholder="Enter Last Name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="notice_period">Notice Period (in Days)</label>
+                                        <select name=notice_period class="form-control" id="notice_period">
+                                            <option value="">---Select---</option>
+                                            {{notice_period}}
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="experience">Experience (in Years)</label>
+                                        <select name="experience" class="form-control" id="experience"
+                                            placeholder="Select Your Experience">
+                                            <option value="">---Select---</option>
+                                            {{experience}}
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label class="control-label" for="education">Education</label>
+                                        <select name="education" class="form-control" id="education"
+                                            placeholder="Select Your Experience">
+                                            <option value="">---Select---</option>
+                                            {{education}}
+                                        </select>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="phone">Mobile #</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Enter Phone #"
+                                        name='phone' value="">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="email">Email ID</label>
+                                    <input type=email name="email" class="form-control" id="email"
+                                        placeholder="Enter Email">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="primary_skill">Primary Skills</label>
+                                    <select class="form-control" id="primary_skill" name="primary_skill" multiple>
+                                        <option value="">---Select---</option>{{primary}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="secondary_skill">Secondary Skills</label>
+                                    <select class="form-control" id="secondary_skill" name="secondary_skill" multiple>
+                                        <option value="">---Select---</option>{{secondary}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="resume">Upload Resume</label>
+                                    <input type="file" name="resume" class="form-control" id="resume"
+                                        placeholder="Upload Resume">
+                                </fieldset>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <fieldset class="form-group mt-4">
+                                <button type="button" id='submit' class="btn btn-info col-md-1">Upload</button>
+                                <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                                <a class="btn btn-info col-md-1" style="text-decoration: none;color:black;"
+                                    href="{{apptitle}}{{resumeupload_url}}">Cancel</a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

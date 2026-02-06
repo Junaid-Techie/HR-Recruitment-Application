@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> HR Recruiter </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ apptitle }}{{ static_url }}css/vendor.css">
+        <link rel="stylesheet" id="theme-style" href="{{ apptitle }}{{ static_url }}css/app.css">
+    </head>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="{{ apptitle }}{{ static_url }}js/jobProfile.js"></script>
+
+    <body>
+        <div class="main-wrapper">
+            <div class="app header-fixed sidebar-fixed" id="app">
+                <header class="header">
+                    <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                        <button class="collapse-btn" id="sidebar-collapse-btn">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="header-block header-block-search col-md-5">
+                        <form role="search">
+                            <div class="input-container">
+                                <i class="fa fa-search"></i>
+                                <input type="search" placeholder="Search" class="form-control">
+                                <div class="underline"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header-block header-block-nav">
+                        <ul class="nav-profile">
+                            <li class="profile dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="fa fa fa-user-circle-o fa-1x">
+                                    </div>
+                                    <span class="name"> User Name</span>
+                                </a>
+                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-user icon"></i> My Profile </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-bell icon"></i> Notifications </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa fa-power-off icon"></i> Logout </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <aside class="sidebar">
+                    <div class="sidebar-container">
+                        <div class="sidebar-header">
+                            <div class="brand">
+                                <i class="fa fa-h-square fa-1x mr-1"></i>
+                                <b>HR Recruiter</b>
+                            </div>
+                        </div>
+                        <nav class="menu">
+                            <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                                <li class="active">
+                                    <a href="{{ apptitle }}{{home_url}}">
+                                        <i class="fa fa-home"></i>Home</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{education_url}}">
+                                        <i class="fa fa-home"></i>Education Master</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{skill_url}}">
+                                        <i class="fa fa-home"></i>Skill Set Master</a>
+                                </li>	
+                                <li>
+                                    <a href="{{ apptitle }}{{country_url}}">
+                                        <i class="fa fa-home"></i>Country Master</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{state_url}}">
+                                        <i class="fa fa-home"></i>State Master</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{city_url}}">
+                                        <i class="fa fa-home"></i>City Master</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{orgprofile_url}}">
+                                        <i class="fa fa-home"></i>Functional Orgs Master </a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{recruiter_url}}">
+                                    <i class="fa fa fa-list"></i>Recruiter Profile</a>
+                                </li>
+                                <li>
+                                    <a href="{{apptitle}}{{jobprofile_url}}">
+                                    <i class="fa fa fa-list"></i>Job Profile</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{resumeupload_url}}">
+                                    <i class="fa fa fa-list"></i>Upload Resume</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}{{prescreen_url}}">
+                                    <i class="fa fa fa-list"></i>Prescreen Resume</a>
+                                </li>
+                                <li>
+                                    <a href="{{ apptitle }}login.html">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>Sign In</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#">
+                                        <i class="fa fa-area-chart"></i> Charts <i class="fa arrow"></i>
+                                    </a>
+                                    <ul class="sidebar-nav collapse">
+                                        <li>
+                                            <a href="#"> Flot Charts </a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </aside>
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+                <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+                <div class="mobile-menu-handle"></div>
+                <article class="content responsive-tables-page">
+                    <div class="title-block">
+                        <h1 class="title"> List of Requirements </h1>
+                    </div> 
+					<form role="form" id='target'>
+                    <section class="section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-block">
+                                        <div class="card-title-block">
+                                            <h3 class="title"> Job Postings List </h3>
+                                        </div>
+                                         <div class="header-block">
+                                                <a href="{{apptitle}}addjobprofile" class="btn btn-primary btn-sm" id ='addbtn'> Add Job</a>
+                                                <a href="#" class="btn btn-primary btn-sm disabled" id ='updatebtn'> Update Job</a>
+                                               <!--  <a class="btn btn-primary btn-sm" id = 'deletedata'> Delete Job</a> -->
+											   <a href="#" class="btn btn-primary btn-sm disabled" id = 'update_status'>Make Enable / Disable</a>
+                                         </div>
+                                        <section class="example">
+                                            <div class="table-flip-scroll">
+                                                <table id = "data" class="table table-striped table-bordered table-hover flip-content">
+                                                <b><span align=center id='message' class=red></span></b>
+
+                                                    <thead class="flip-header">
+                                                        <tr>
+                                                            <th>Job Code</th>
+                                                            <th>Job Title</th>
+                                                            <th>Job Description</th>
+                                                            <th>Location</th>
+<!--                                                             <th>Education</th>
+ -->                                                        <th>Expectation</th>
+                                                            <th>Education Description</th>
+                                                            <th>Company</th>
+															<th>Status</th>
+                                                        </tr>
+                                                    </thead>
+<!--                                                     <tfoot class="flip-header">
+                                                        <tr class="odd gradeX">
+                                                            <th>Job Code</th>
+                                                            <th>Job Title</th>
+                                                            <th>Job Description</th>
+                                                            <th>Location</th>
+                                                             <th>Education</th>
+                                                            <th>Expectation</th>
+                                                            <th>Education Description</th>
+                                                            <th>Company</th>
+                                                        </tr>
+                                                    </tfoot> -->
+                                                </table>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><input type="hidden" name='txn' id='txn' value=''><input type="hidden" name='filter' id='filter' value={{job_code}}></form>                    
+                </article>
+                <footer class="footer">
+                    <div class="footer-block author">
+                        <ul>
+                            <li>Copyright © 2019 Nisum Consulting Pvt Ltd. All rights reserved </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="{{ apptitle }}{{ static_url }}js/vendor.js"></script>
+        <script src="{{ apptitle }}{{ static_url }}js/app.js"></script>
+    </body>
+</html>

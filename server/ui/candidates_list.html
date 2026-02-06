@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content responsive-tables-page">
+    <div class="title-block">
+        <h1 class="title">Applications </h1>
+    </div>
+    <form role="form" id='target'>
+        <section class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title-block">
+                                <h3 class="title"> Applications List </h3>
+                            </div>
+                            <div class="header-block">
+                                <a href="{{apptitle}}applications/uploadresume" class="btn btn-info btn-sm"
+                                    id='addbtn'>Add</a>
+                                <a class="btn btn-info btn-sm disabled" id='updatebtn' href="#">Edit</a>
+                                <!--  <a class="btn btn-primary btn-sm" id = 'deletedata'> Delete Job</a> -->
+                                <a class="btn btn-info btn-sm disabled" id='update_status' href="#">Mark Enable /
+                                    Disable</a>
+                            </div>
+                            <section>
+                                <div class="table-responsive">
+                                    <table id="data" class="display responsive nowrap" style="width:100%">
+                                        <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                                                id='message'></span></b>
+                                        <div id="loading"></div>
+                                        <thead class="flip-header">
+                                            <tr>
+                                                <th>Job Code</th>
+                                                <th>Applicant Name</th>
+                                                <th>Experience <br> in Years</th>
+                                                <th>Mobile #</th>
+                                                <th>Email</th>
+                                                <th>Primary Skills</th>
+                                                <th>Preview Profile</th>
+                                                <th>Notice Period</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <!--                                                     <tfoot class="flip-header">
+                                                        <tr class="odd gradeX">
+                                                            <th>Job Code</th>
+                                                            <th>Job Title</th>
+                                                            <th>Job Description</th>
+                                                            <th>Location</th>
+                                                             <th>Education</th>
+                                                            <th>Expectation</th>
+                                                            <th>Education Description</th>
+                                                            <th>Company</th>
+                                                        </tr>
+                                                    </tfoot> -->
+                                    </table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><input type="hidden" name='txn' id='txn' value=''>
+    </form>
+</article>
+
+{% endblock %}

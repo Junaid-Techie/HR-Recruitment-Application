@@ -1,0 +1,7 @@
+Classification
+Dimensionality Reduction
+Regression
+Clustering
+Transfer Learning
+Neural Nets and Deep Learning
+Reinforcement Learning

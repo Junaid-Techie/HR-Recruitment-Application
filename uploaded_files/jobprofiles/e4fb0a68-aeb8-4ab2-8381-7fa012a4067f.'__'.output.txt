@@ -1,0 +1,650 @@
+<html dir="ltr" lang="en"><head>
+    <meta charset="UTF-8">
+    <title>IoT Extension</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+<style data-merge-styles="true" type="text/css"></style><style data-merge-styles="true" type="text/css"></style><style data-merge-styles="true" type="text/css"></style><style data-merge-styles="true" type="text/css"></style><style type="text/css">@viewport {
+  width: device-width; }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0px;
+  padding: 0px; }
+
+*:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-rendering: optimizeLegibility;
+  margin: 0px;
+  padding: 0px; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  transition: color .2s; }
+
+img {
+  height: auto;
+  max-width: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal; }
+
+.app {
+  height: 100vh;
+  overflow: auto; }
+  .theme-light .app {
+    background-color: "#ffffff"; }
+  .theme-dark .app {
+    background-color: #111111; }
+
+/* Fix for default button focus indicators not appearing */
+.theme-light .ms-Button--default:focus::after {
+  margin: 2px !important;
+  border: thin solid #747474 !important; }
+
+.theme-dark .ms-Button--default:focus::after {
+  margin: 2px !important;
+  border: thin solid gray !important; }
+
+.multipage-form {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header header" "navigation body";
+  -ms-grid-columns: 250px 1fr;
+  -ms-grid-rows: auto 1fr; }
+  .multipage-form .header {
+    grid-area: header;
+    -ms-grid-row: 1;
+    -ms-grid-column-span: 2;
+    margin-bottom: 5px; }
+  .multipage-form .navigation {
+    grid-area: navigation;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    overflow-y: auto;
+    margin-left: 15px; }
+  .multipage-form .body {
+    grid-area: body;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    overflow-y: auto;
+    margin-right: 15px;
+    margin-left: 15px; }
+
+.tabbed-form {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: auto 1fr auto; }
+  .tabbed-form .header {
+    grid-row: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    padding-left: 15px;
+    padding-top: 15px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
+    .theme-light .tabbed-form .header {
+      border-bottom-color: rgba(128, 128, 128, 0.7); }
+    .theme-dark .tabbed-form .header {
+      border-bottom-color: rgba(128, 128, 128, 0.7); }
+  .tabbed-form .content {
+    grid-row: 2;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    overflow-y: auto; }
+  .tabbed-form .navigator {
+    grid-row: 3;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 15px;
+    border-top-width: 1px;
+    border-top-style: solid; }
+    .theme-light .tabbed-form .navigator {
+      border-top-color: rgba(128, 128, 128, 0.7); }
+    .theme-dark .tabbed-form .navigator {
+      border-top-color: rgba(128, 128, 128, 0.7); }
+
+.configuration-step {
+  max-width: 65%;
+  min-width: 650px;
+  padding: 15px; }
+  .configuration-step .section {
+    margin-bottom: 30px; }
+  .configuration-step .section-overview {
+    margin-bottom: 15px; }
+  .configuration-step .section-header {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 5px; }
+  .configuration-step .section-wide {
+    width: 100%; }
+
+.edge-module-specification-header {
+  padding: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.edge-module-specification-body {
+  padding: 20px; }
+
+.edge-module-specification-field {
+  margin-bottom: 10px;
+  max-width: 80%;
+  min-width: 250px; }
+
+.edge-module-specification-description {
+  margin-bottom: 10px;
+  max-width: 80%; }
+
+.edge-module-specification-field-small {
+  max-width: 250px; }
+
+.edge-module-specification-section {
+  padding-top: 10px; }
+
+.edge-module-specification-footer {
+  padding: 20px;
+  border-top-width: 1px;
+  border-top-style: solid; }
+  .theme-light .edge-module-specification-footer {
+    border-color: rgba(128, 128, 128, 0.7); }
+  .theme-dark .edge-module-specification-footer {
+    border-color: rgba(128, 128, 128, 0.7); }
+
+.edge-module-specification-createOptions {
+  height: 300px; }
+
+.theme-light .error-icon {
+  color: #e00b1c; }
+
+.theme-dark .error-icon {
+  color: #f63747; }
+
+.warning {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex; }
+
+.warning-icon-wrapper {
+  font-size: 20px;
+  margin-right: 5px; }
+
+.theme-light .warning-icon {
+  color: #ff8c00; }
+
+.theme-dark .warning-icon {
+  color: #ff8c00; }
+
+.step-navigator {
+  display: flex; }
+  .step-navigator .submit-section {
+    margin-right: 32px; }
+
+.nav-button {
+  margin-right: 16px;
+  min-width: 150px;
+  max-height: 22px;
+  text-overflow: ellipsis; }
+
+.twin-path-list .entry {
+  border-left-width: 1px;
+  border-left-style: solid;
+  margin-bottom: 30px;
+  padding-left: 16px; }
+  .theme-light .twin-path-list .entry {
+    border-color: rgba(128, 128, 128, 0.7); }
+  .theme-dark .twin-path-list .entry {
+    border-color: rgba(128, 128, 128, 0.7); }
+
+.twin-path-list .top-line {
+  display: flex; }
+  .twin-path-list .top-line .command {
+    margin-top: 20px;
+    width: 30px; }
+  .twin-path-list .top-line .path {
+    width: 100%; }
+
+.twin-path-list .warning-line {
+  height: 15px;
+  margin-bottom: 10px; }
+
+.twin-path-editor {
+  height: 200px; }
+
+.listViewDisplay {
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  display: -ms-grid;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: auto 1fr; }
+
+.listViewDisplay-header {
+  grid-row: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1; }
+
+.listViewDisplay-body {
+  grid-row: 2;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  overflow-x: auto; }
+
+.listViewDisplay-content {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px; }
+
+.listViewDisplay-shimmer {
+  margin: 5px; }
+
+.listViewDisplay-revert-message {
+  z-index: 1;
+  position: relative; }
+
+.listViewDisplay-message {
+  z-index: 1;
+  position: relative; }
+
+.listViewDisplay-revert-message {
+  z-index: 1; }
+
+.listViewDisplay-itemGrip {
+  cursor: move;
+  width: 10px;
+  display: flex;
+  align-items: center; }
+
+.listViewDisplay-itemGrip:after {
+  content: '\2807';
+  font-size: 25px; }
+
+.listViewDisplay-itemWrapper {
+  min-height: 50px;
+  margin-bottom: 5px;
+  border-top: 1px solid rgba(107, 132, 156, 0.25);
+  border-bottom: 1px solid rgba(107, 132, 156, 0.25);
+  margin-bottom: -1px;
+  display: flex;
+  align-items: center; }
+
+.theme-light .listViewDisplay-itemWrapper:hover {
+  background-color: rgba(85, 179, 255, 0.1); }
+
+.theme-dark .listViewDisplay-itemWrapper:hover {
+  background-color: rgba(128, 128, 128, 0.15); }
+
+.listView-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.listView-flex-column-name {
+  flex-basis: 30%; }
+
+.listViewDisplay-item-name {
+  padding: 10px; }
+
+.listView-flex-column-range {
+  flex-basis: 40%; }
+
+.listViewDisplay-item-range {
+  padding: 10px; }
+
+.listViewDisplay-item-action {
+  padding: 10px; }
+
+.listViewDisplay-item-commands {
+  padding: 10px; }
+
+.ipFilterList-columnHeader {
+  font-weight: bold;
+  font-size: 10px;
+  padding: 0px 10px; }
+
+.ipFilterList-columnHeader > p {
+  padding: 0px 10px; }
+
+.ipFilter-testPanel-buttons {
+  margin-top: 20px; }
+
+.ipFilter-testPanel-Results {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.ipFilterList-header {
+  font-size: 12px;
+  padding: 0px 20px; }
+
+.ipFilter-testPanel-description {
+  margin-top: 0;
+  font-size: 10px; }
+
+.ipFilter-testPanel-results {
+  font-size: 12px; }
+  .ipFilter-testPanel-results .ipFilter-testPanel-results-action-name {
+    font-weight: 900; }
+  .ipFilter-testPanel-results .ipFilter-testPanel-results-icon {
+    vertical-align: middle;
+    margin-right: 8px; }
+    .ipFilter-testPanel-results .ipFilter-testPanel-results-icon .ipFilter-testPanel-results-allow-icon {
+      color: #5DB300; }
+    .ipFilter-testPanel-results .ipFilter-testPanel-results-icon .ipFilter-testPanel-results-block-icon {
+      color: #E81123; }
+  .ipFilter-testPanel-results .ipFilter-testPanel-results-ipMask {
+    margin-left: 4px; }
+
+.deviceTwinsListView-queryClause {
+  max-width: 900px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: nowrap; }
+  .deviceTwinsListView-queryClause .and {
+    min-width: 30px;
+    width: 30px;
+    margin-right: 2px;
+    margin-top: 7px; }
+  .deviceTwinsListView-queryClause .button {
+    min-width: 25px;
+    margin-right: 5px;
+    width: 25px; }
+  .deviceTwinsListView-queryClause .field {
+    width: 350px;
+    margin-right: 5px; }
+  .deviceTwinsListView-queryClause .operator {
+    width: 150px;
+    margin-right: 5px; }
+
+.deviceTwinsListView-queryEditor {
+  max-width: 900px; }
+
+.deviceTwinsListView-queryOptions {
+  max-width: 900px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+
+.deviceTwinsListView-messagebarTitle {
+  margin-top: 0px; }
+
+.deviceTwinsListView-messagebarButtons > button {
+  margin-right: 5px; }
+
+.ms-Button--commandBar {
+  padding: 5px; }
+
+.deviceTracingStatus {
+  display: flex;
+  margin-bottom: 5px; }
+  .deviceTracingStatus .labelSection {
+    margin-right: 5px;
+    min-width: 250px;
+    text-overflow: ellipsis; }
+  .deviceTracingStatus .settingsSection {
+    border-left-width: 3px;
+    border-left-style: solid;
+    font-weight: lighter;
+    min-width: 200px;
+    padding-left: 5px; }
+  .deviceTracingStatus .settings {
+    display: flex; }
+  .deviceTracingStatus .syncIcon {
+    margin-top: 5px;
+    margin-left: 15px; }
+  .theme-light .deviceTracingStatus .settingEnabled {
+    border-color: #7fba00; }
+  .theme-dark .deviceTracingStatus .settingEnabled {
+    border-color: #7fba00; }
+  .theme-light .deviceTracingStatus .settingDisabled {
+    border-color: rgba(128, 128, 128, 0.7); }
+  .theme-dark .deviceTracingStatus .settingDisabled {
+    border-color: rgba(128, 128, 128, 0.7); }
+
+.theme-dark .ms-DetailsList .ms-DetailsRow-fields .ms-DetailsRow-cell a {
+  color: #4894fe; }
+
+.theme-light .ms-DetailsList .ms-DetailsRow-fields .ms-DetailsRow-cell a {
+  color: #015cda; }
+
+.device-parent {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: stretch; }
+  .device-parent .label {
+    min-width: 250px;
+    text-overflow: ellipsis;
+    margin-right: 5px; }
+  .device-parent .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row nowrap; }
+  .device-parent .detailsSection {
+    border-left-width: 3px;
+    border-left-style: solid;
+    width: auto;
+    font-weight: lighter;
+    min-width: 200px;
+    padding-left: 5px; }
+  .theme-light .device-parent .settingEnabled {
+    border-color: #7fba00; }
+  .theme-dark .device-parent .settingEnabled {
+    border-color: #7fba00; }
+  .theme-light .device-parent .settingDisabled {
+    border-color: rgba(128, 128, 128, 0.7); }
+  .theme-dark .device-parent .settingDisabled {
+    border-color: rgba(128, 128, 128, 0.7); }
+
+.copyableReadOnlyField {
+  display: flex;
+  margin-bottom: 5px; }
+  .copyableReadOnlyField .labelSection {
+    margin-right: 5px;
+    min-width: 250px;
+    text-overflow: ellipsis; }
+  .copyableReadOnlyField .copySection {
+    margin-right: 5px; }
+  .copyableReadOnlyField .borderedSection {
+    display: flex;
+    flex-grow: 1;
+    height: 22px;
+    border-width: 1px;
+    border-style: solid;
+    margin-right: 5px; }
+    .theme-light .copyableReadOnlyField .borderedSection {
+      border-color: rgba(128, 128, 128, 0.7);
+      background-color: rgba(128, 128, 128, 0.1); }
+    .theme-dark .copyableReadOnlyField .borderedSection {
+      border-color: rgba(128, 128, 128, 0.7);
+      background-color: rgba(128, 128, 128, 0.1); }
+    .copyableReadOnlyField .borderedSection > .ms-Button {
+      height: 22px; }
+    .copyableReadOnlyField .borderedSection > input {
+      border: none;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 12px;
+      width: 100%;
+      text-overflow: ellipsis;
+      background-color: transparent; }
+      .copyableReadOnlyField .borderedSection > input:hover {
+        border: none; }
+      .copyableReadOnlyField .borderedSection > input:focus {
+        border: none; }
+      .theme-light .copyableReadOnlyField .borderedSection > input {
+        color: #161616; }
+      .theme-dark .copyableReadOnlyField .borderedSection > input {
+        color: #ffffff; }
+
+.labelWithCallout {
+  display: flex; }
+  .theme-light .labelWithCallout .learnMore {
+    color: #636363; }
+  .theme-dark .labelWithCallout .learnMore {
+    color: #acacac; }
+  .labelWithCallout .learnMore div > i {
+    font-size: 13px; }
+
+.labelCalloutContent {
+  margin: 7px; }
+
+.nav-list {
+  display: flex; }
+  .theme-light .nav-list a:hover {
+    background-color: rgba(85, 179, 255, 0.1);
+    color: #161616; }
+  .theme-dark .nav-list a:hover {
+    background-color: rgba(128, 128, 128, 0.15);
+    color: #ffffff; }
+  .nav-list .item {
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 8px; }
+    .theme-light .nav-list .item {
+      color: #015cda; }
+    .theme-dark .nav-list .item {
+      color: #4894fe; }
+  .nav-list .active {
+    border-bottom-width: 2px;
+    border-bottom-style: solid; }
+    .theme-light .nav-list .active {
+      border-color: #161616;
+      color: #161616; }
+    .theme-dark .nav-list .active {
+      border-color: #ffffff;
+      color: #ffffff; }
+  .theme-light .nav-list .error-icon {
+    color: #e00b1c; }
+  .theme-dark .nav-list .error-icon {
+    color: #f63747; }
+
+.field-list {
+  width: 100%;
+  margin-top: 10px; }
+  .field-list .row {
+    display: flex;
+    margin-top: 10px; }
+  .field-list .col {
+    margin-right: 20px;
+    flex: 1; }
+  .field-list .col-main {
+    flex: 2; }
+  .field-list .col-command {
+    width: 30px; }
+  .field-list .col-header {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px; }
+  .field-list .command {
+    padding-bottom: 8px; }
+
+.editor-wrapper {
+  padding-bottom: 1px;
+  border-style: solid;
+  border-width: 1px; }
+  .theme-light .editor-wrapper {
+    border-color: rgba(128, 128, 128, 0.7); }
+  .theme-dark .editor-wrapper {
+    border-color: rgba(128, 128, 128, 0.7); }
+
+.theme-light .editor-error {
+  border-color: #e00b1c; }
+
+.theme-dark .editor-error {
+  border-color: #f63747; }
+
+.theme-light .editor-error-text {
+  color: #e00b1c; }
+
+.theme-dark .editor-error-text {
+  color: #f63747; }
+
+.editor-step {
+  height: 60vh; }
+
+.deviceConnection {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap; }
+  .deviceConnection .labelSection {
+    min-width: 250px;
+    text-overflow: ellipsis;
+    margin-right: 5px; }
+  .deviceConnection div > .ms-ChoiceField {
+    display: inline-block;
+    margin-right: 10px; }
+
+.theme-light .highlighter {
+  color: #000000;
+  background-color: #fff100; }
+
+.theme-dark .highlighter {
+  color: #000000;
+  background-color: #fff100; }
+
+.theme-light .highlighter {
+  color: #000000;
+  background-color: #fff100; }
+
+.theme-dark .highlighter {
+  color: #000000;
+  background-color: #fff100; }
+
+.target-section {
+  margin-top: 10px;
+  max-width: 50%;
+  min-width: 300px; }
+  .target-section .show-results-button {
+    margin-bottom: 5px; }
+</style></head>
+<body class="css-35">
+    <div id="reactTarget"><div class="ms-Fabric root-75"><div class="theme-light"><div class="app"><div class="mainContent"><div class="listViewDisplay"><div class="listViewDisplay-header"><div><div style="position: relative;"><div data-automation-id="visibleContent" style=""><div role="menubar" class="ms-FocusZone css-79 ms-CommandBar root-76" data-focuszone-id="FocusZone2"><div class="ms-OverflowSet ms-CommandBar-primaryCommand primarySet-80" role="presentation"><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Save" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Save changes made to this device" aria-disabled="true" data-is-focusable="true" tabindex="0"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="Save" role="presentation" aria-hidden="true" class="ms-Button-icon icon-101"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__3">Save</div></div></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Message to Device" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Invoke cloud to device message" data-is-focusable="true" tabindex="-1" aria-disabled="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="Mail" role="presentation" aria-hidden="true" class="ms-Button-icon icon-103"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__6">Message to Device</div></div></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Direct Method" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Invoke direct method on device" data-is-focusable="true" tabindex="-1" aria-disabled="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="remote" role="presentation" aria-hidden="true" class="ms-Button-icon icon-105"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__9">Direct Method</div></div></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Add Module Identity" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Add module identity to device" data-is-focusable="true" tabindex="-1" aria-disabled="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="Add" role="presentation" aria-hidden="true" class="ms-Button-icon icon-103"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__12">Add Module Identity</div></div></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Device Twin" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="View or edit device twin" data-is-focusable="true" tabindex="0" aria-disabled="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="BulletedList" role="presentation" aria-hidden="true" class="ms-Button-icon icon-107"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__15">Device Twin</div></div></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Manage keys" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Manage keys for device" aria-disabled="true" data-is-focusable="true" aria-expanded="false" aria-haspopup="true" tabindex="-1"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="Permissions" role="presentation" aria-hidden="true" class="ms-Button-icon icon-105"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__18">Manage keys</div></div><i data-icon-name="ChevronDown" role="presentation" aria-hidden="true" class="ms-Button-menuIcon menuIcon-108"></i></div></button></div><div class="ms-OverflowSet-item item-81"><button type="button" role="menuitem" name="Refresh" class="ms-Button ms-Button--commandBar is-disabled ms-CommandBarItem-link root-93" aria-label="Refresh device information" data-is-focusable="true" tabindex="-1" aria-disabled="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="refresh" role="presentation" aria-hidden="true" class="ms-Button-icon icon-101"></i><div class="ms-Button-textContainer textContainer-95"><div class="ms-Button-label label-97" id="id__21">Refresh</div></div></div></button></div></div></div></div></div></div></div><div class="listViewDisplay-body"><div class="listViewDisplay-content"><div class="copyableReadOnlyField"><div class="labelSection"><div class="labelWithCallout"><label for="copyableReadOnlyField167" class="ms-Label root-166">Device ID</label><div><button type="button" class="ms-Button ms-Button--icon learnMore root-167" aria-label="Learn more" data-is-focusable="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="InfoSolid" role="presentation" aria-hidden="true" class="ms-Button-icon icon-171"></i></div></button></div><span class="ms-layer"></span></div></div><div class="borderedSection"><input aria-label="Device ID" id="copyableReadOnlyField167" type="text" class="input" readonly="" value="NF05UHK1"><input aria-hidden="true" tabindex="-1" class="input" readonly="" value="NF05UHK1" style="position: absolute; opacity: 0; height: 1px; width: 1px;"></div><div class="copySection"><button type="button" title="Copy" class="ms-Button ms-Button--icon root-167" aria-label="Copy field contents" data-is-focusable="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="copy" role="presentation" aria-hidden="true" class="ms-Button-icon icon-174"></i></div></button></div></div><div>This device is being authenticated through a CA Certificate.</div><div style="margin-top: 10px;"><div class="deviceConnection"><div class="labelSection"><div class="labelWithCallout"><label for="deviceConnectionField174" class="ms-Label root-166">Enable connection to IoT Hub</label><div><button type="button" class="ms-Button ms-Button--icon learnMore root-167" aria-label="Learn more" data-is-focusable="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="InfoSolid" role="presentation" aria-hidden="true" class="ms-Button-icon icon-171"></i></div></button></div><span class="ms-layer"></span></div></div><div class="applicationRole-175" id="deviceConnectionField174"><div class="ms-ChoiceFieldGroup root-176" role="radiogroup"><div class="ms-ChoiceFieldGroup-flexContainer flexContainer-177"><div class="ms-ChoiceField root-178"><div class="ms-ChoiceField-wrapper choiceFieldWrapper-179"><input id="ChoiceGroup178-enabled" class="ms-ChoiceField-input input-180" type="radio" name="ChoiceGroup178" checked="" style="background-color: red;"><label for="ChoiceGroup178-enabled" class="ms-ChoiceField-field is-checked field-181"><span id="ChoiceGroupLabel179-enabled" class="ms-ChoiceFieldLabel">Enable</span></label></div></div><div class="ms-ChoiceField root-178"><div class="ms-ChoiceField-wrapper choiceFieldWrapper-179"><input id="ChoiceGroup178-disabled" class="ms-ChoiceField-input input-180" type="radio" name="ChoiceGroup178"><label for="ChoiceGroup178-disabled" class="ms-ChoiceField-field field-187"><span id="ChoiceGroupLabel179-disabled" class="ms-ChoiceFieldLabel">Disable</span></label></div></div></div></div></div></div></div><div style="margin-top: 10px;"><div class="device-parent"><div class="label"><div class="labelWithCallout"><label for="" class="ms-Label root-166">Parent device</label><div><button type="button" class="ms-Button ms-Button--icon learnMore root-167" aria-label="Learn more" data-is-focusable="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="InfoSolid" role="presentation" aria-hidden="true" class="ms-Button-icon icon-171"></i></div></button></div><span class="ms-layer"></span></div></div><div class="detailsSection settingDisabled"><div>No parent device</div><div class="buttons"><button type="button" class="ms-Button ms-Button--icon button set root-167" title="Set a parent device" aria-label="Set a parent device" data-is-focusable="true"><div class="ms-Button-flexContainer flexContainer-94"><i data-icon-name="Settings" role="presentation" aria-hidden="true" class="ms-Button-icon icon-190"></i></div></button></div></div></div></div></div><div class="listViewDisplay-content"><div><div role="presentation" class="ms-FocusZone css-79" data-focuszone-id="FocusZone25"><div class="ms-Pivot root-109" role="tablist"><button type="button" id="Pivot24-Tab0" class="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-116" role="tab" aria-selected="true" name="Module Identities" data-content="Module Identities" data-is-focusable="true" tabindex="0"><div class="ms-Button-flexContainer flexContainer-117"><span class="ms-Pivot-linkContent linkContent-112"><span class="ms-Pivot-text text-113"> Module Identities</span></span></div></button><button type="button" id="Pivot24-Tab1" class="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-122" role="tab" aria-selected="false" name="Configurations" data-content="Configurations" data-is-focusable="true" tabindex="-1"><div class="ms-Button-flexContainer flexContainer-117"><span class="ms-Pivot-linkContent linkContent-112"><span class="ms-Pivot-text text-113"> Configurations</span></span></div></button></div></div><div role="tabpanel" aria-labelledby="Pivot24-Tab0"><div><div><div class="ms-Viewport" style="min-width: 1px; min-height: 1px;"><div class="ms-DetailsList is-horizontalConstrained root-123" data-automationid="DetailsList" data-is-scrollable="false"><div role="grid" aria-rowcount="1" aria-colcount="4" aria-readonly="true"><div role="presentation" class="ms-DetailsList-headerWrapper headerWrapper-125"><div role="row" class="ms-FocusZone css-79 ms-DetailsHeader root-127" data-automationid="DetailsHeader" data-focuszone-id="FocusZone33" style="min-width: 1395.2px;"><div role="columnheader" aria-sort="none" aria-colindex="1" class="ms-DetailsHeader-cell is-actionable root-146" data-is-draggable="false" draggable="false" data-automationid="ColumnsHeaderColumn" data-item-key="moduleId" style="width: 220px;"><span class="cellTooltip-154"><span id="header32-moduleId" aria-labelledby="header32-moduleId-name" class="ms-DetailsHeader-cellTitle cellTitle-152" data-is-focusable="true" aria-describedby="header32-moduleId-tooltip" aria-haspopup="false" tabindex="0"><span id="header32-moduleId-name" class="ms-DetailsHeader-cellName cellName-153">Module ID</span></span></span></div><label id="header32-moduleId-tooltip" class="accessibleLabel-141">Module identity ID</label><div aria-hidden="true" role="button" data-is-focusable="false" data-sizer-index="0" class="ms-DetailsHeader-cellSizer cellSizer-134 cellSizerStart-136" tabindex="-1"></div><div role="columnheader" aria-sort="none" aria-colindex="2" class="ms-DetailsHeader-cell is-actionable root-146" data-is-draggable="false" draggable="false" data-automationid="ColumnsHeaderColumn" data-item-key="connectionState" style="width: 220px;"><span class="cellTooltip-154"><span id="header32-connectionState" aria-labelledby="header32-connectionState-name" class="ms-DetailsHeader-cellTitle cellTitle-152" data-is-focusable="true" aria-describedby="header32-connectionState-tooltip" aria-haspopup="false" tabindex="-1"><span id="header32-connectionState-name" class="ms-DetailsHeader-cellName cellName-153">Connection State</span></span></span></div><label id="header32-connectionState-tooltip" class="accessibleLabel-141">Connection State for module identity</label><div aria-hidden="true" role="button" data-is-focusable="false" data-sizer-index="1" class="ms-DetailsHeader-cellSizer cellSizer-134 cellSizerStart-136" tabindex="-1"></div><div role="columnheader" aria-sort="none" aria-colindex="3" class="ms-DetailsHeader-cell is-actionable root-146" data-is-draggable="false" draggable="false" data-automationid="ColumnsHeaderColumn" data-item-key="connectionStateLastUpdated" style="width: 220px;"><span class="cellTooltip-154"><span id="header32-connectionStateLastUpdated" aria-labelledby="header32-connectionStateLastUpdated-name" class="ms-DetailsHeader-cellTitle cellTitle-152" data-is-focusable="true" aria-describedby="header32-connectionStateLastUpdated-tooltip" aria-haspopup="false" tabindex="-1"><span id="header32-connectionStateLastUpdated-name" class="ms-DetailsHeader-cellName cellName-153">Connection State Last Updated (UTC)</span></span></span></div><label id="header32-connectionStateLastUpdated-tooltip" class="accessibleLabel-141">Time of last connection state update</label><div aria-hidden="true" role="button" data-is-focusable="false" data-sizer-index="2" class="ms-DetailsHeader-cellSizer cellSizer-134 cellSizerStart-136" tabindex="-1"></div><div role="columnheader" aria-sort="none" aria-colindex="4" class="ms-DetailsHeader-cell is-actionable root-146" data-is-draggable="false" draggable="false" data-automationid="ColumnsHeaderColumn" data-item-key="lastActivityTime" style="width: 815.2px;"><span class="cellTooltip-154"><span id="header32-lastActivityTime" aria-labelledby="header32-lastActivityTime-name" class="ms-DetailsHeader-cellTitle cellTitle-152" data-is-focusable="true" aria-describedby="header32-lastActivityTime-tooltip" aria-haspopup="false" tabindex="-1"><span id="header32-lastActivityTime-name" class="ms-DetailsHeader-cellName cellName-153">Last Activity Time (UTC)</span></span></span></div><label id="header32-lastActivityTime-tooltip" class="accessibleLabel-141">Time of last registered activity</label></div></div><div role="presentation" class="ms-DetailsList-contentWrapper contentWrapper-126"><div role="presentation" class="ms-FocusZone css-79 focusZone-124" data-focuszone-id="FocusZone34"><div class="ms-SelectionZone" role="presentation"><div class="ms-List"><div class="ms-List-surface" role="presentation"></div></div></div></div></div></div></div></div><div>There are no module identities for this device.</div></div></div></div></div></div></div><div class="ms-Overlay root-197"></div></div></div></div></div></div></div>
+
+    <!-- Main -->
+    <script>var frameSignature = "FxFrameBlade";</script>
+<script type="text/javascript" src="npm.core-js.55833314f719bfe67099.js"></script><script type="text/javascript" src="npm.office-ui-fabric-react.a654e328a59cef5c3524.js"></script><script type="text/javascript" src="npm.moment.52e4ab4506d5b8796c51.js"></script><script type="text/javascript" src="npm.uifabric.d817a727d6d87f2cbeed.js"></script><script type="text/javascript" src="npm.ms-rest-js.9e8556e13ebde3a883ed.js"></script><script type="text/javascript" src="npm.microsoft-azure-devices-iothub-controlplane20180401.8fb9d2df633a9caf8900.js"></script><script type="text/javascript" src="npm.react-dom.fc0a382a8ed81bf173d8.js"></script><script type="text/javascript" src="npm.immutable.d07490c52bb0c70f9ba5.js"></script><script type="text/javascript" src="vendors~main.911c0dbf01ee49fed733.js"></script><script type="text/javascript" src="main.f5fd74256a9a47362304.js"></script>
+
+<div class="ms-Layer ms-Layer--fixed root-172" data-portal-element="true"><div class="ms-Fabric ms-Layer-content content-191"><div class="ms-Callout-container container-192" style="visibility: hidden;"><div class="ms-Callout callout root-193" hidden="" tabindex="-1" style="opacity: 0; filter: opacity(0);"><div role="alertdialog" class="ms-Callout-main calloutMain-196" style="outline: none; max-height: 564px;"><div class="labelCalloutContent">Device identity used for device authentication and access control</div></div></div></div></div></div><div class="ms-Layer ms-Layer--fixed root-172" data-portal-element="true"><div class="ms-Fabric ms-Layer-content content-191"><div class="ms-Callout-container container-192" style="visibility: hidden;"><div class="ms-Callout callout root-193" hidden="" tabindex="-1" style="opacity: 0; filter: opacity(0);"><div role="alertdialog" class="ms-Callout-main calloutMain-196" style="outline: none; max-height: 564px;"><div class="labelCalloutContent">Enable or Disable the device interaction with the IoT Hub</div></div></div></div></div></div><div class="ms-Layer ms-Layer--fixed root-172" data-portal-element="true"><div class="ms-Fabric ms-Layer-content content-191"><div class="ms-Callout-container container-192" style="visibility: hidden;"><div class="ms-Callout callout root-193" hidden="" tabindex="-1" style="opacity: 0; filter: opacity(0);"><div role="alertdialog" class="ms-Callout-main calloutMain-196" style="outline: none; max-height: 564px;"><div class="labelCalloutContent">IoT Edge devices can be a parent for child IoT devices. Child devices can communicate with an IoT hub through the parent device.</div></div></div></div></div></div></body></html>

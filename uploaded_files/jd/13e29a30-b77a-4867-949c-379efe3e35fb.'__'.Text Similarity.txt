@@ -1,0 +1,24 @@
+1.Jaccard Similarity:-
+   Intersection over union is defined as size of intersection divided by size of union of two sets.
+
+def jaccard_similarity(query,document):
+	intersection = set(query).intersection(set(document))
+	union= set(query).union(set(document))
+	return len(intersection)/len(union)
+
+Sentence 1: President greets the press in Chicago
+Sentence 2: Obama speaks in Illinois
+My 2 sentences have no common words and will have a Jaccard score of 0. This is a terrible distance score because the 2 sentences have very similar meanings. Here Jaccard similarity is neither able to capture semantic similarity nor lexical semantic of these two sentences.
+Moreover, this approach has an inherent flaw. That is, as the size of the document increases, the number of common words tend to increase even if the documents talk about different topics.
+
+
+2.K-means and Hierarchical Clustering Dendrogam:-
+   Convert sentence into vectors using
+
+->Bag of words with either TF(term frequency) called Count Vectorizer method.	
+->TF-IDF(term frequency - inverse document frequency)
+->Word Embeddings either coming from pre_trained methods such as Fastext,Glove or Word2Vec or customized method by using Continous Bag of Words(CBoW) or Skip Gram models.
+
+Difference between BoW or TF-IDF and Word Embeddings
+*BoW or TF-IDF create one number per word while word embeddings typically creates one vector per word.
+*BoW or TF-IDF is good for classification documents as a whole, but word embeddings is good for identifying contextual content.

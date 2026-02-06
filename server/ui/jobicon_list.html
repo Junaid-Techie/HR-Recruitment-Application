@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content responsive-tables-page">
+    <div class="title-block">
+        <h1 class="title"> List of Pending Jobs</h1>
+    </div>
+    <form role="form" id='target'>
+        <section class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-title-block">
+                                <h3 class="title"> Jobs List </h3>
+                            </div>
+                            <section class="example">
+                                <div class="table-flip-scroll">
+                                    <table id="data"
+                                        class="table table-striped table-bordered table-hover flip-content">
+                                        <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                                                id='message'></span></b>
+                                        <div id="loading"></div>
+
+                                        <thead class="flip-header">
+                                            <tr>
+                                                <th>Job Code</th>
+                                                <th>Job Title</th>
+                                                <th>Job Description</th>
+                                                <th>Positions</th>
+                                                <th>Experience</th>
+                                                <th>Education</th>
+                                                <th>Interview Pattern</th>
+                                                <th>Client</th>
+                                                <th>Location</th>
+                                                <th>Preview JD</th>
+                                                <th>Job_status</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><input type="hidden" name='txn' id='txn' value=''><input type="hidden" name='filter' id='filter'
+            value={{job_code}}>
+    </form>
+</article>
+{% endblock %}

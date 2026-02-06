@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title">Update Job</h3>
+    </div>
+    <form role="form" id='target' method='post' enctype='multipart/form-data'>
+        <section class="row section">
+            <div class="sameheight-container">
+                <div class="col-md-12 card card-block ">
+                    <!-- <div class="title-block">
+                        <h4> Update Requirements </h4>
+                        <hr />
+                        <b><span style='align-content:center;padding: 145px 340px;width:auto;color:green'
+                                id='message'></span></b>
+                        <div id="loading"></div>
+                    </div> -->
+                    <div>
+                        <h4>Update Requirements</h4>
+                        <hr />
+                        <b>
+                            <p><span style='align-content:center;padding: 80px 400px;width:auto;color:green'
+                                    id='message'></span></p>
+                        </b>
+                        <b>
+                            <p><span style='align-content:center;padding: 80px 400px;width:auto;color:red'
+                                    id='errormessage'></span></p>
+                        </b>
+                        <span id="loading"></span>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="code">Job Code</label>
+                                    <input type="text" class="form-control" id="code" placeholder="Enter JobCode"
+                                        name="code" value="{{jobdetail.code}}" required>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="desc">Job Description </label>
+                                    <textarea rows="2" class="form-control" id="desc" placeholder="Descrribe Job"
+                                        name="desc">{{jobdetail.desc}}</textarea>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="positions"># Of Vacancies</label>
+                                    <select name="positions" class="form-control" id="positions"
+                                        placeholder="Select Positions">
+                                        <option value="">---Select---</option>
+                                        {{positions_options}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="edu">Education Qualification</label>
+                                    <select name="edu" class="form-control" id="edu" placeholder="Select Qualification">
+                                        <option value="">---Select---</option>
+                                        {{education_options}}
+                                    </select>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="client">Client Name</label>
+                                    <input type="text" class="form-control" id="client" placeholder="Enter Client"
+                                        name="client" value="{{jobdetail.client}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="interview_pattern">Interview
+                                        Pattern</label>
+                                    <select class="form-control" id="interview_pattern"
+                                        placeholder="Select Interview Type" name="interview_pattern" multiple>
+                                        {{interview_options}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="emp_type">Employment Type</label>
+                                    <select name="emp_type" class="form-control" id="emp_type"
+                                        placeholder="Select Employment Type">
+                                        <option value="">---Select---</option>
+                                        {{emp_type}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="hr_name">HR Name</label>
+                                    <input type="text" class="form-control" id="hr_name" placeholder="Enter HR name"
+                                        name="hr_name" value="{{jobdetail.hr_name}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="hr_phone">HR Phone</label>
+                                    <input type="text" class="form-control" id="hr_phone"
+                                        placeholder="Enter HR phone number" name="hr_phone"
+                                        value="{{jobdetail.hr_phone}}">
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-centered">
+                            <div class="sameheight-item">
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="title">Job Title</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Enter JobTitle"
+                                        name="title" value="{{jobdetail.title}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="required_skills">Required
+                                        Skills</label>
+                                    <select name="required_skills" class="form-control" id="required_skills"
+                                        placeholder="Select Tech Skill" multiple>
+                                        {{required_skills_options}}
+                                    </select>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="minexp">Experiance Range (in
+                                        Years)</label><br>
+                                    <select name=minexp id="minexp">
+                                        <option value=''>---Select---</option>
+                                        {{minexp_options}}
+                                    </select>
+                                    <select name=maxexp>
+                                        <option value=''>---Select---</option>
+                                        {{maxexp_options}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="functional_org">Functional Orgs</label>
+
+                                    <select class="form-control" id="functional_org"
+                                        placeholder="Select Functional Orgs" name="functional_org" multiple>
+                                        {{functional_orgs}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="location">Working Location
+                                    </label>
+                                    <select class="form-control" id="location" name="location">
+                                        <option value="">---Select---</option>
+                                        {{work_location}}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="hr_email">HR Email</label>
+                                    <input type="text" class="form-control" id="hr_email"
+                                        placeholder="Enter HR email address" name="hr_email"
+                                        value="{{jobdetail.hr_email}}">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="end_date">End Date</label>
+                                    <input type="date" class="form-control" id="end_date" placeholder="Enter Client"
+                                        name="end_date" value="{{jobdetail.end_date}}">
+                                </fieldset>
+                                <!-- <fieldset class="form-group">
+                                        <label class="control-label" for="formGroupExampleInput3">Upload JD</label>
+                                        <input type="file" name="jd" class="form-control" id="formGroupExampleInput" placeholder="Upload JD" >{{jd}}
+                                    </fieldset> -->
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <fieldset class="form-group mt-4">
+                                <button type="button" id='updsubmit' class="btn btn-info col-md-1">Update
+                                </button>
+                                <button type="reset" class="btn btn-info col-md-1">Clear</button>
+                                <a class="btn btn-info col-md-1" style="text-decoration: none;color:black"
+                                    href="{{apptitle}}{{jobprofile_url}}">&nbsp;Cancel</a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</article>
+{% endblock %}

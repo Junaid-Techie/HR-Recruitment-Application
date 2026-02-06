@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> HR Recruiter </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ apptitle }}{{ static_url }}css/vendor.css">
+    <link rel="stylesheet" id="theme-style" href="{{ apptitle }}{{ static_url }}css/app.css">
+</head>
+<script type="text/javascript" language="javascript"
+    src="{{ apptitle }}{{ static_url }}js/jquery-3.4.1.min.js"></script>
+
+<script src="{{ apptitle }}{{ static_url }}js/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css"
+    href="{{ apptitle }}{{ static_url }}js/DataTables-1.10.20/css/jquery.dataTables.min.css">
+
+<script src="{{ apptitle }}{{ static_url }}js/CityProfile.js"></script>
+
+<body>
+    <div class="main-wrapper">
+        <div class="app header-fixed sidebar-fixed" id="app">
+            <header class="header">
+                <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                    <button class="collapse-btn" id="sidebar-collapse-btn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="header-block header-block-search col-md-5">
+                    <form role="search">
+                        <div class="input-container">
+                            <i class="fa fa-search"></i>
+                            <input type="search" placeholder="Search" class="form-control">
+                            <div class="underline"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="header-block header-block-nav">
+                    <ul class="nav-profile">
+                        <li class="profile dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="fa fa-user-circle-o fa-1x">
+                                </div>
+                                <span class="name"> User Name</span>
+                            </a>
+                            <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-user icon"></i> My Profile </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-bell icon"></i> Notifications </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-power-off icon"></i> Logout </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <aside class="sidebar">
+                <div class="sidebar-container">
+                    <div class="sidebar-header">
+                        <div class="brand">
+                            <i class="fa fa-h-square fa-1x mr-1"></i>
+                            <b>HR Recruiter</b>
+                        </div>
+                    </div>
+                    <nav class="menu">
+                        <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                            <li class="active">
+                                <a href="{{ apptitle }}{{home_url}}">
+                                    <i class="fa fa-home"></i>Home</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{education_url}}">
+                                    <i class="fa fa-home"></i>Education Master</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{skill_url}}">
+                                    <i class="fa fa-home"></i>Skill Set Master</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{country_url}}">
+                                    <i class="fa fa-home"></i>Country Master</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{state_url}}">
+                                    <i class="fa fa-home"></i>State Master</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{city_url}}">
+                                    <i class="fa fa-home"></i>City Master</a>
+                            </li>
+							<li>
+								<a href="{{ apptitle }}{{orgprofile_url}}">
+									<i class="fa fa-home"></i>Functional Orgs Master </a>
+							</li>
+
+                            <li>
+                                <a href="{{ apptitle }}{{recruiter_url}}">
+                                    <i class="fa fa fa-list"></i>Recruiter Profile</a>
+                            </li>
+                            <li>
+                                <a href="{{apptitle}}{{jobprofile_url}}">
+                                    <i class="fa fa fa-list"></i>Job Profile</a>
+                            </li>
+                            <li>
+                                <a href="{{ apptitle }}{{resumeupload_url}}">
+                                    <i class="fa fa fa-list"></i>Upload Resume</a>
+                            </li>
+							<li>
+								<a href="{{ apptitle }}{{prescreen_url}}">
+								<i class="fa fa fa-list"></i>Prescreen Resume</a>
+							</li>
+							<li>
+								<a href="{{ apptitle }}{{schedule_url}}">
+								<i class="fa fa fa-list"></i>Assign Interviewer</a>
+							</li>
+                            <li>
+                                <a href="{{ apptitle }}login.html">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>Sign In</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <div class="sidebar-overlay" id="sidebar-overlay"></div>
+            <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+            <div class="mobile-menu-handle"></div>
+            <article class="content forms-page">
+                <div class="title-block">
+                    <h3 class="title"> Update City Records </h3>
+                </div>
+                <section class="row section">
+                    <div class="sameheight-container">
+                        <div class="col-md-12 card card-block ">
+                            <div class="title-block">
+                                <h4>Edit City</h4>
+                                <hr />
+                                <b><span style="align-content:center" id='message'></span></b>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-5 col-centered">
+                                    <div class="sameheight-item">
+                                        <form role="form" id='target'>
+                                            <fieldset class="form-group">
+                                                <label class="control-label" for="formGroupExampleInput">Country</label>
+                                                <select class="form-control" id="inputCountry" name='country_name'>
+                                                    <option value="">---Select---</option>
+                                                    {{country}}
+                                                </select>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="control-label" for="formGroupExampleInput">State</label>
+                                                <select class="form-control" id="inputState" name='state_name'>
+                                                    <option value="">---Select---</option>
+                                                    {{state}}
+                                                </select>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="control-label" for="formGroupExampleInput">City</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput"
+                                                    placeholder="Enter City Name" name='city_name'
+                                                    value="{{city_name}}">
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="control-label"
+                                                    for="formGroupExampleInput2">Address</label>
+                                                <textarea rows="3" class="form-control" id="formGroupExampleInput"
+                                                    placeholder="Enter Address" name='address'>{{address}}</textarea>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="control-label"
+                                                    for="formGroupExampleInput2">Description</label>
+                                                <textarea rows="3" class="form-control" id="formGroupExampleInput"
+                                                    placeholder="Describe City"
+                                                    name='city_desc'>{{city_desc}}</textarea>
+                                            </fieldset>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <fieldset class="form-group mt-4">
+                                        <button type="button" id='updsubmit' class="btn btn-success col-md-2">Update
+                                        </button><input type="hidden" name="txn" value="{{reference}}">
+                                        <button type="reset" class="btn btn-secondary col-md-2">Clear</button>
+                                    </fieldset>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <footer class="footer">
+                <div class="footer-block author">
+                    <ul>
+                        <li>Copyright © 2019 Nisum Consulting Pvt Ltd. All rights reserved </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="{{ apptitle }}{{ static_url }}js/vendor.js"></script>
+    <script src="{{ apptitle }}{{ static_url }}js/app.js"></script>
+</body>
+
+</html>

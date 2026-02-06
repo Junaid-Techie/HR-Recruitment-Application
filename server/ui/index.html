@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content charts-flot-page">
+    <div class="title-block">
+        <h3 class="title"> Recruitment Analysis</h3>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Bar Chart Example </h3>
+                        </div>
+                        <section class="example">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-bar-chart"
+                                     style="padding: 0px; position: relative;">
+                                    <canvas class="flot-base" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                    <div class="flot-text"
+                                         style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                        <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 16px; text-align: center;">
+                                                1
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 101px; text-align: center;">
+                                                2
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 185px; text-align: center;">
+                                                3
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 270px; text-align: center;">
+                                                4
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 355px; text-align: center;">
+                                                5
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 71px; top: 206px; left: 439px; text-align: center;">
+                                                6
+                                            </div>
+                                        </div>
+                                        <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 192px; left: 7px; text-align: right;">0
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 153px; left: 0px; text-align: right;">
+                                                10
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 115px; left: 0px; text-align: right;">
+                                                20
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 77px; left: 0px; text-align: right;">30
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 39px; left: 0px; text-align: right;">40
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 1px; left: 0px; text-align: right;">50
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas class="flot-overlay" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Line Chart Example </h3>
+                        </div>
+                        <section class="example">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart"
+                                     style="padding: 0px; position: relative;">
+                                    <canvas class="flot-base" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                    <div class="flot-text"
+                                         style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                        <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 16px; text-align: center;">
+                                                1
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 111px; text-align: center;">
+                                                2
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 206px; text-align: center;">
+                                                3
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 300px; text-align: center;">
+                                                4
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 395px; text-align: center;">
+                                                5
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 83px; top: 206px; left: 490px; text-align: center;">
+                                                6
+                                            </div>
+                                        </div>
+                                        <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 192px; left: 7px; text-align: right;">0
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 153px; left: 0px; text-align: right;">
+                                                10
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 115px; left: 0px; text-align: right;">
+                                                20
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 77px; left: 0px; text-align: right;">30
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 39px; left: 0px; text-align: right;">40
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 1px; left: 0px; text-align: right;">50
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas class="flot-overlay" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Pie Chart Example </h3>
+                        </div>
+                        <section class="example">
+                            <div class="flot-chart">
+                                <div class="flot-chart-pie-content" id="flot-pie-chart"
+                                     style="padding: 0px; position: relative;">
+                                    <canvas class="flot-base" width="450" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 225px; height: 225px;"></canvas>
+                                    <canvas class="flot-overlay" width="450" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 225px; height: 225px;"></canvas>
+                                    <div class="legend">
+                                        <div style="position: absolute; width: 63px; height: 84px; top: 5px; right: 5px; background-color: rgb(255, 255, 255); opacity: 0.85;"></div>
+                                        <table style="position:absolute;top:5px;right:5px;;font-size:smaller;color:#545454">
+                                            <tbody>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(183, 226, 136);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">Sales 1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(158, 216, 95);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">Sales 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(133, 206, 54);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">Sales 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(107, 168, 41);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">Sales 4</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Live Chart Example </h3>
+                        </div>
+                        <section class="example">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-moving"
+                                     style="padding: 0px; position: relative;">
+                                    <canvas class="flot-base" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                    <div class="flot-text"
+                                         style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                        <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 186px; left: 35px; text-align: right;">
+                                                0
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 146px; left: 27px; text-align: right;">
+                                                25
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 106px; left: 27px; text-align: right;">
+                                                50
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 66px; left: 27px; text-align: right;">
+                                                75
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 26px; left: 20px; text-align: right;">
+                                                100
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas class="flot-overlay" width="1003" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 501.5px; height: 225px;"></canvas>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="card-title-block">
+                            <h3 class="title"> Multiple Axes Line Chart Example </h3>
+                        </div>
+                        <section class="example">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-multi"
+                                     style="padding: 0px; position: relative;">
+                                    <canvas class="flot-base" width="2146" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1073px; height: 225px;"></canvas>
+                                    <div class="flot-text"
+                                         style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                        <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 51px; text-align: center;">
+                                                Feb 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 147px; text-align: center;">
+                                                Apr 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 244px; text-align: center;">
+                                                Jun 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 341px; text-align: center;">
+                                                Aug 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 441px; text-align: center;">
+                                                Oct 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 537px; text-align: center;">
+                                                Dec 2007
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 637px; text-align: center;">
+                                                Feb 2008
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 735px; text-align: center;">
+                                                Apr 2008
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 833px; text-align: center;">
+                                                Jun 2008
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; max-width: 82px; top: 206px; left: 930px; text-align: center;">
+                                                Aug 2008
+                                            </div>
+                                        </div>
+                                        <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 192px; left: 15px; text-align: right;">
+                                                0
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 128px; left: 7px; text-align: right;">
+                                                50
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 64px; left: 0px; text-align: right;">
+                                                100
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 1px; left: 0px; text-align: right;">150
+                                            </div>
+                                        </div>
+                                        <div class="flot-y-axis flot-y2-axis yAxis y2Axis"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 192px; left: 1030px;">0.600€
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 128px; left: 1030px;">0.667€
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 64px; left: 1030px;">0.733€
+                                            </div>
+                                            <div class="flot-tick-label tickLabel"
+                                                 style="position: absolute; top: 1px; left: 1030px;">0.800€
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas class="flot-overlay" width="2146" height="450"
+                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1073px; height: 225px;"></canvas>
+                                    <div class="legend">
+                                        <div style="position: absolute; width: 167px; height: 42px; bottom: 29px; left: 34px; background-color: rgb(255, 255, 255); opacity: 0.85;"></div>
+                                        <table style="position:absolute;bottom:29px;left:34px;;font-size:smaller;color:#999999">
+                                            <tbody>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(133,206,54);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">Oil price ($)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="legendColorBox">
+                                                    <div style="border:1px solid #ccc;padding:1px">
+                                                        <div style="width:4px;height:0;border:5px solid rgb(106,164,43);overflow:hidden"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="legendLabel">USD/EUR exchange rate</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

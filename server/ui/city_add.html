@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+<article class="content forms-page">
+    <div class="title-block">
+        <h3 class="title"> Post New City Records </h3>
+    </div>
+    <section class="row section">
+        <div class="sameheight-container">
+            <div class="col-md-12 card card-block ">
+                <div>
+                    <h4>City Records</h4>
+                    <hr />
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 400px;width:auto;color:green'
+                                id='message'></span></p>
+                    </b>
+                    <b>
+                        <p><span style='align-content:center;padding: 145px 400px;width:auto;color:red'
+                                id='errormessage'></span></p>
+                    </b>
+                    <span id="loading"></span>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-5 col-centered">
+                        <div class="sameheight-item">
+                            <form role="form" id='target'>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="inputCountry">Country</label>
+                                    <select class="form-control" id="inputCountry" name='country_name'>
+                                        <option value="none">---Select---</option>
+                                        {% for obj in countryobj %}
+                                        <option value="{{ obj.country_name }}">{{ obj.country_name }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="inputState">State</label>
+                                    <select class="form-control" id="inputState" name='state_name'>
+                                        <option value="none">---Select---</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="city_name">City
+                                        Name</label>
+                                    <input type="text" class="form-control" id="city_name" placeholder="Enter City"
+                                        name="city_name">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="address">
+                                        Address</label>
+                                    <textarea rows="3" class="form-control" id="address" placeholder="Enter Address"
+                                        name='address'></textarea>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="control-label" for="city_desc">
+                                        Description</label>
+                                    <textarea rows="3" class="form-control" id="city_desc" placeholder="Describe City"
+                                        name='city_desc'></textarea>
+                                </fieldset>
+                                <fieldset class="form-group mt-4">
+                                    <button type="button" id='submit' class="btn btn-info col-md-2">Add</button>
+                                    <button type="reset" class="btn btn-info col-md-2">Clear</button>
+                                    <a class="btn btn-info col-md-2" style="text-decoration: none;color:black;"
+                                        href="{{apptitle}}{{city_url}}">Cancel</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

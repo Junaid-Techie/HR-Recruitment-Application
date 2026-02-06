@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> HR Recruiter </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ apptitle }}{{ static_url }}css/vendor.css">
+    <link rel="stylesheet" id="theme-style" href="{{ apptitle }}{{ static_url }}css/app.css">
+</head>
+<script type="text/javascript" language="javascript"
+    src="{{ apptitle }}{{ static_url }}js/jquery-3.4.1.min.js"></script>
+
+<script src="{{ apptitle }}{{ static_url }}js/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css"
+    href="{{ apptitle }}{{ static_url }}js/DataTables-1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="{{ apptitle }}{{ static_url }}css/validate.css">
+<script src="{{ apptitle }}{{ static_url }}js/{{jsfile}}"></script>
+<script src="{{ apptitle }}{{ static_url }}js/validate.js"></script>
+<script src="{{ apptitle }}{{ static_url }}js/{{validate_js}}"></script>
+<script src="{{ apptitle }}{{ static_url }}js/jquery.collapse.js"></script>
+
+<body>
+    <div class="main-wrapper">
+        <div class="app header-fixed sidebar-fixed" id="app">
+            <header class="header">
+                <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                    <button class="collapse-btn" id="sidebar-collapse-btn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="header-block header-block-search col-md-5">
+                    <form role="search">
+                        <div class="input-container">
+                            <i class="fa fa-search"></i>
+                            <input type="search" placeholder="Search" class="form-control">
+                            <div class="underline"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="header-block header-block-nav">
+                    <ul class="nav-profile">
+                        <div class="nav-buttons">
+                            <a href="{{ apptitle }}{{jobicon_url}}"><i class="fa fa-envelope"></i><span id=jobcnt
+                                    style="color: red;">{{jobcnt}}</span></a>
+                            <a href="{{ apptitle }}{{prescreenicon_url}}"><i class="fa fa-envelope"></i><span id=precnt
+                                    style="color: red;">{{precnt}}</span></a>
+                            <a href="{{ apptitle }}{{notscheduled_url}}"><i class="fa fa-envelope"></i><span id=schedcnt
+                                    style="color: red;">{{schedcnt}}</span></a>
+                        </div>
+                        <li class="profile dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="fa fa fa-user-circle-o fa-1x">
+                                </div>
+                                <span class="name"> User Name</span>
+                            </a>
+                            <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-user icon"></i> My Profile </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-bell icon"></i> Notifications </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-power-off icon"></i> Logout </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <aside class="sidebar">
+                <div class="sidebar-container">
+                    <div class="sidebar-header">
+                        <div class="brand">
+                            <i class="fa fa-h-square fa-1x mr-1"></i>
+                            <b>HR Recruiter</b>
+                        </div>
+                    </div>
+                    <nav class="menu">
+
+                        <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                            <li>
+                                <div data-collapse class="sidebar-menu metismenu">
+                                    <a href="#" class="sidebar-menu metismenu" style="height:37px;font-size: 18px;">
+                                        <i class="fa fa-gear"></i><b
+                                            style="color:rgba(0, 217, 255, 0.651)">&nbsp;&nbsp;&nbsp;Master
+                                            Services</b></a>
+                                    <ul class="sidebar-menu metismenu">
+                                        {% for page in master_pages %}
+                                        <li>
+                                            <a href="{{ apptitle }}{{page.url}}" class="{{page.icon}}"
+                                                style="font-size: 17px;color:rgba(0, 217, 255, 0.651)">&nbsp;&nbsp;&nbsp;{{page.label}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                            {% for page in service_pages %}
+                            <li>
+                                <a href="{{ apptitle }}{{page.url}}" class="{{page.icon}}"
+                                    style="font-size: 17px;color:rgba(0, 217, 255, 0.651)">
+                                    &nbsp;&nbsp;&nbsp;{{page.label}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            {% block content%}
+
+            {% endblock %}
+
+            <footer class="footer">
+                <div class="footer-block author">
+                    <ul>
+                        <li>Copyright © 2020 Nisum Consulting Pvt Ltd. All rights reserved</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="{{ apptitle }}{{ static_url }}js/vendor.js"></script>
+    <script src="{{ apptitle }}{{ static_url }}js/app.js"></script>
+</body>
+
+</html>
